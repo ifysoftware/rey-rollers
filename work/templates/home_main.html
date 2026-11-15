@@ -1,0 +1,215 @@
+<!-- SECCIÓN 1 — BANNER: logotipo completo + fondo oficial -->
+<header class="banner" id="inicio">
+  <div class="container banner__in">
+    <img class="banner__logo" src="assets/logo-full-white.svg" alt="Rey Roller's — Expertos en cortinas" width="1078" height="430">
+    <p class="banner__line"><span>Cortinas roller</span><i></i><span>Persianas</span><i></i><span>Toldos</span></p>
+  </div>
+  {{VCUT_BANNER}}
+</header>
+
+<!-- SECCIÓN 2 — PORTADA: horizontal, se ve el ambiente completo -->
+<section class="hero" aria-label="Presentación">
+  <div class="hero__media" style="background-image:url('{{LQIP}}')">
+    <picture>
+      <source type="image/avif" srcset="assets/img/hero/hero-640.avif 640w, assets/img/hero/hero-960.avif 960w, assets/img/hero/hero-1280.avif 1280w, assets/img/hero/hero-1600.avif 1600w, assets/img/hero/hero-2048.avif 2048w" sizes="100vw">
+      <source type="image/webp" srcset="assets/img/hero/hero-640.webp 640w, assets/img/hero/hero-960.webp 960w, assets/img/hero/hero-1280.webp 1280w, assets/img/hero/hero-1600.webp 1600w, assets/img/hero/hero-2048.webp 2048w" sizes="100vw">
+      <img src="assets/img/hero/hero-1280.jpg" alt="Living luminoso con cortinas verticales instaladas por Rey Roller's" width="2048" height="1152" fetchpriority="high" decoding="async">
+    </picture>
+    <!-- Para usar VIDEO en vez de foto: <video autoplay muted loop playsinline poster="assets/img/hero/hero-1280.jpg"><source src="assets/video/hero.mp4" type="video/mp4"></video> -->
+  </div>
+  <div class="container hero__in">
+    <div class="hero__copy">
+      <p class="eyebrow">Expertos en cortinas</p>
+      <h1>Donde la luz encuentra <em>su medida.</em></h1>
+      <p class="hero__lead">Soluciones a medida en cortinas roller, persianas y protección solar. Los detalles marcan la diferencia.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="{{WA_GENERAL}}" target="_blank" rel="noopener">Cotiza tu proyecto <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost-light" href="#productos">Ver productos</a>
+      </div>
+      <ul class="hero__stats">
+        <li><b><svg class="ico star"><use href="#i-star"/></svg>5.0</b><span>Reseñas en Google</span></li>
+        <li><b>3 años</b><span>de garantía</span></li>
+        <li><b>Todo Chile</b><span>envíos a nivel nacional</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS + SERVICIOS -->
+<section class="section sec--dark wm-dark has-vtop" id="nosotros">
+  {{VCUT_ABOUT}}
+  <div class="container about">
+    <div class="about__text reveal">
+      <p class="eyebrow">¿Quiénes somos?</p>
+      <h2>Los detalles marcan <em>la diferencia.</em></h2>
+      <p class="lead">En Rey Roller's desarrollamos soluciones a medida en cortinas roller, persianas y sistemas de protección solar, combinando diseño, tecnología y asesoría especializada. Cada proyecto es abordado con profesionalismo, precisión técnica y atención personalizada.</p>
+      <p class="lead">Nuestro compromiso es acompañar a cada cliente en todo el proceso, asegurando acabados impecables y resultados que reflejen nuestro principio fundamental.</p>
+      <ul class="chips">
+        <li><svg class="ico"><use href="#i-shield"/></svg>3 años de garantía</li>
+        <li><svg class="ico"><use href="#i-truck"/></svg>Envíos a todo Chile</li>
+        <li><svg class="ico"><use href="#i-ruler"/></svg>Fabricación a medida</li>
+      </ul>
+    </div>
+    <figure class="about__img reveal">
+      <img src="assets/img/about.webp" alt="Ambiente con cortinas instaladas" width="720" height="846" loading="lazy" decoding="async">
+      <img class="about__badge" src="assets/img/logo-round.webp" alt="Rey Roller's — Expertos en cortinas" width="640" height="640" loading="lazy" decoding="async">
+    </figure>
+  </div>
+
+  <div class="container services" id="servicios">
+    <header class="sec-head reveal">
+      <p class="eyebrow">Nuestros servicios</p>
+      <h2>Soluciones integrales en cortinas y protección solar</h2>
+      <p class="lead">Combinamos diseño, precisión técnica y tecnología aplicada. Cada proyecto es ejecutado bajo nuestro principio fundamental: los detalles marcan la diferencia.</p>
+    </header>
+    <ul class="features">{{SERVICES}}
+    </ul>
+  </div>
+</section>
+
+<!-- PRODUCTOS (a medida) -->
+<section class="section products wm-light has-vtop" id="productos">
+  {{VCUT_PRODUCTS}}
+  <div class="container">
+    <header class="sec-head sec-head--split reveal">
+      <div>
+        <p class="eyebrow">Nuestros productos</p>
+        <h2>Fabricados a medida</h2>
+      </div>
+      <p class="lead">Cada sistema es fabricado a medida, con materiales seleccionados y mecanismos de alto estándar para garantizar desempeño, durabilidad y terminaciones impecables. Entra a cada producto para ver su descripción y fotos.</p>
+    </header>
+    <div class="pgrid pgrid--main">{{PRODUCTS_MAIN}}
+    </div>
+    <h3 class="subhead reveal">Más soluciones</h3>
+    <div class="pgrid pgrid--mini">{{PRODUCTS_MORE}}
+    </div>
+  </div>
+</section>
+
+<!-- COMPARADOR BLACKOUT vs SUNSCREEN -->
+<section class="section sec--dark wm-dark has-vtop" id="comparar">
+  {{VCUT_CMP}}
+  <div class="container">
+    <header class="sec-head sec-head--center reveal">
+      <p class="eyebrow eyebrow--center">Blackout vs Sunscreen</p>
+      <h2>Mueve la cortina y <em>compara.</em></h2>
+      <p class="lead">Es la misma ventana con dos telas distintas. A la izquierda el Blackout bloquea la luz y la vista. A la derecha el Sunscreen filtra la luz, reduce el deslumbramiento y deja ver hacia afuera.</p>
+    </header>
+
+    <div class="cmp reveal" id="cmp" style="--pos:50%">
+      <div class="cmp__scene">
+        <svg class="cmp__view" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="cmp-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f9fee"/><stop offset=".62" stop-color="#b9e0ff"/><stop offset="1" stop-color="#f1f8ff"/></linearGradient>
+            <radialGradient id="cmp-sun"><stop offset="0" stop-color="#fff"/><stop offset=".22" stop-color="#fff4cf" stop-opacity=".95"/><stop offset="1" stop-color="#ffe7a0" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="800" height="500" fill="url(#cmp-sky)"/>
+          <circle cx="600" cy="110" r="190" fill="url(#cmp-sun)"/>
+          <g fill="#fff" opacity=".92"><ellipse cx="150" cy="112" rx="92" ry="20"/><ellipse cx="205" cy="98" rx="56" ry="18"/><ellipse cx="430" cy="64" rx="70" ry="14"/><ellipse cx="700" cy="196" rx="80" ry="15"/></g>
+          <g fill="#aab6c6"><rect x="40" y="258" width="64" height="112"/><rect x="112" y="228" width="54" height="142"/><rect x="176" y="272" width="72" height="98"/><rect x="520" y="248" width="60" height="122"/><rect x="588" y="214" width="76" height="156"/><rect x="672" y="262" width="70" height="108"/></g>
+          <g fill="#93a0b2" opacity=".9"><rect x="122" y="240" width="10" height="10"/><rect x="140" y="240" width="10" height="10"/><rect x="122" y="262" width="10" height="10"/><rect x="140" y="262" width="10" height="10"/><rect x="602" y="232" width="10" height="10"/><rect x="626" y="232" width="10" height="10"/><rect x="602" y="256" width="10" height="10"/><rect x="626" y="256" width="10" height="10"/></g>
+          <path d="M0 340 C130 306 250 316 360 334 S600 318 800 328 V500 H0Z" fill="#84b873"/>
+          <path d="M0 392 C160 362 310 384 450 378 S690 362 800 384 V500 H0Z" fill="#5c9a49"/>
+          <rect y="446" width="800" height="54" fill="#4a8239"/>
+          <g><rect x="106" y="352" width="10" height="64" fill="#5b4631"/><circle cx="111" cy="340" r="38" fill="#3f7d34"/><circle cx="92" cy="358" r="26" fill="#468a3a"/><circle cx="132" cy="358" r="26" fill="#468a3a"/>
+             <rect x="662" y="346" width="10" height="70" fill="#5b4631"/><circle cx="667" cy="332" r="44" fill="#3f7d34"/><circle cx="644" cy="354" r="28" fill="#468a3a"/><circle cx="692" cy="354" r="28" fill="#468a3a"/>
+             <rect x="388" y="372" width="8" height="44" fill="#5b4631"/><circle cx="392" cy="362" r="26" fill="#468a3a"/></g>
+        </svg>
+        <span class="cmp__mull cmp__mull--v"></span><span class="cmp__mull cmp__mull--h"></span>
+
+        <div class="cmp__fabric cmp__fabric--sun" aria-hidden="true"><i class="hem"></i></div>
+        <div class="cmp__fabric cmp__fabric--black" aria-hidden="true"><i class="hem"></i></div>
+        <span class="cmp__rail" aria-hidden="true"></span>
+
+        <span class="cmp__chip cmp__chip--l"><b>Blackout</b><small>Sin luz · sin vista</small></span>
+        <span class="cmp__chip cmp__chip--r"><b>Sunscreen</b><small>Luz suave · con vista</small></span>
+
+        <span class="cmp__knob" aria-hidden="true"><svg class="ico"><use href="#i-chev-l"/></svg><svg class="ico"><use href="#i-chev-r"/></svg></span>
+        <input class="cmp__range" id="cmpRange" type="range" min="0" max="100" value="50" step="1" aria-label="Comparar Blackout y Sunscreen: mueve para ver cada tela">
+        <span class="cmp__hint" aria-hidden="true">Arrastra</span>
+      </div>
+
+      <div class="cmp__cols">
+        <article class="cmp__col">
+          <h3>Roller Blackout</h3>
+          <ul class="meters">
+            <li><span>Luz que pasa</span><i style="--w:3%"></i><em>Nada</em></li>
+            <li><span>Vista al exterior</span><i style="--w:0%"></i><em>Ninguna</em></li>
+            <li><span>Privacidad</span><i style="--w:100%"></i><em>Máxima</em></li>
+          </ul>
+          <a class="link link--light" href="productos/roller-blackout/">Ver Roller Blackout <svg class="ico"><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="cmp__col">
+          <h3>Roller Sunscreen</h3>
+          <ul class="meters">
+            <li><span>Luz que pasa</span><i style="--w:45%"></i><em>Filtrada</em></li>
+            <li><span>Vista al exterior</span><i style="--w:80%"></i><em>Se mantiene</em></li>
+            <li><span>Deslumbramiento</span><i style="--w:18%"></i><em>Reducido</em></li>
+          </ul>
+          <a class="link link--light" href="productos/roller-sunscreen/">Ver Roller Sunscreen <svg class="ico"><use href="#i-arrow"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LÍNEA ECO (secundaria) -->
+<section class="section eco wm-light has-vtop" id="linea-eco">
+  {{VCUT_ECO}}
+  <div class="container">
+    <header class="sec-head sec-head--split reveal">
+      <div>
+        <p class="eyebrow">Línea Eco</p>
+        <h2>Alternativa económica</h2>
+      </div>
+      <p class="lead">Productos estándar para quienes buscan una opción más accesible. Los sistemas principales son los fabricados a medida; la Línea Eco es un complemento.</p>
+    </header>
+    <div class="pgrid pgrid--eco">{{PRODUCTS_ECO}}
+    </div>
+  </div>
+</section>
+
+<!-- ÁREAS -->
+<section class="section sec--dark wm-dark has-vtop" id="areas">
+  {{VCUT_AREAS}}
+  <div class="container">
+    <header class="sec-head sec-head--center reveal">
+      <p class="eyebrow eyebrow--center">Dónde trabajamos</p>
+      <h2>Para cada espacio, <em>una solución.</em></h2>
+      <p class="lead">Abarcamos proyectos residenciales, corporativos e industriales, con el mismo estándar de precisión.</p>
+    </header>
+    <div class="areas">{{AREAS}}
+    </div>
+  </div>
+</section>
+
+<!-- FIDELIZACIÓN: testimonios + clientes -->
+<section class="section fidel wm-light has-vtop" id="clientes">
+  {{VCUT_FIDEL}}
+  <div class="container">
+    <header class="sec-head sec-head--center reveal">
+      <p class="eyebrow eyebrow--center">Testimonios</p>
+      <h2>Clientes que nos calificaron con <em>5 estrellas</em></h2>
+      <p class="lead">Reseñas reales publicadas en Google.</p>
+    </header>
+    <div class="carousel reveal" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Testimonios de clientes">
+      <div class="carousel__track" id="track" tabindex="0">{{TESTIMONIALS}}
+      </div>
+      <div class="carousel__ctrl">
+        <button class="round" id="prev" aria-label="Anterior"><svg class="ico"><use href="#i-chev-l"/></svg></button>
+        <div class="dots" id="dots" aria-hidden="true"></div>
+        <button class="round" id="next" aria-label="Siguiente"><svg class="ico"><use href="#i-chev-r"/></svg></button>
+      </div>
+    </div>
+
+    <header class="sec-head sec-head--center sec-head--sm reveal">
+      <p class="eyebrow eyebrow--center">Han confiado en nosotros</p>
+    </header>
+    <ul class="trust reveal">{{CLIENTS_FEATURED}}
+    </ul>
+  </div>
+  <div class="logos" aria-label="Más clientes que han confiado en Rey Roller's">
+    <ul class="logos__track" id="logos">{{CLIENTS_MARQUEE}}
+    </ul>
+  </div>
+</section>

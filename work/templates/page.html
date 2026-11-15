@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="{{P}}favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{P}}apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="Rey Roller's">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESC}}">
+<meta property="og:image" content="{{P}}assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="{{P}}assets/fonts/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{P}}assets/fonts/plus-jakarta-sans-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+{{HEAD_EXTRA}}
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="{{P}}css/styles.css?v={{V_CSS}}">
+</head>
+<body class="{{BODY_CLASS}}">
+{{SPRITE}}
+{{LOADER}}
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<nav class="nav" id="nav" aria-label="Principal">
+  <div class="container nav__in">
+    <a class="nav__brand" href="{{P}}#inicio" aria-label="Rey Roller's, ir al inicio"><img src="{{P}}assets/logo-white.svg" alt="Rey Roller's" width="152" height="46"></a>
+    <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    <div class="nav__menu" id="menu">
+      <a href="{{P}}#nosotros">Nosotros</a>
+      <a href="{{P}}#productos">Productos</a>
+      <a href="{{P}}#linea-eco">Línea Eco</a>
+      <a href="{{P}}#clientes">Clientes</a>
+      <a href="{{P}}#contacto">Contacto</a>
+      <a class="btn btn--primary btn--sm" href="{{WA_GENERAL}}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Cotiza por WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<main id="contenido">
+{{MAIN}}
+</main>
+
+<footer class="footer sec--dark has-vtop" id="contacto">
+  {{VCUT_FOOT}}
+  <div class="container">
+    <div class="cta">
+      <div class="cta__text">
+        <h2>¿Listo para transformar <em>tus espacios?</em></h2>
+        <p>Agenda una visita técnica o cuéntanos tu proyecto. Te asesoramos en todo el proceso.</p>
+      </div>
+      <div class="cta__btns">
+        <a class="btn btn--dark" href="{{WA_VISITA}}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Agendar visita técnica</a>
+        <a class="btn btn--ghost-dark" href="tel:+56995628622"><svg class="ico"><use href="#i-phone"/></svg>+56 9 9562 8622</a>
+      </div>
+    </div>
+
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="{{P}}#inicio" aria-label="Rey Roller's, ir al inicio"><img src="{{P}}assets/isotipo-white.svg" alt="Rey Roller's" width="82" height="123" loading="lazy"></a>
+        <p>Expertos en cortinas.<br>Los detalles marcan la diferencia.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/56995628622" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>+56 9 9562 8622</a></li>
+          <!-- TODO: reemplazar href con el perfil real -->
+          <li><a href="#" data-todo="instagram" target="_blank" rel="noopener"><svg class="ico"><use href="#i-ig"/></svg>Instagram</a></li>
+          <li><a href="#" data-todo="facebook" target="_blank" rel="noopener"><svg class="ico"><use href="#i-fb"/></svg>Facebook</a></li>
+          <!-- TODO: indicar la comuna -->
+          <li><span><svg class="ico"><use href="#i-pin"/></svg>Santiago, Chile</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="{{P}}#nosotros">Nosotros</a></li>
+          <li><a href="{{P}}#productos">Productos</a></li>
+          <li><a href="{{P}}#linea-eco">Línea Eco</a></li>
+          <li><a href="{{P}}#areas">Áreas</a></li>
+          <li><a href="{{P}}#clientes">Clientes</a></li>
+        </ul>
+      </div>
+      <div class="footer__seal">
+        {{SEAL}}
+        <p>Todos nuestros trabajos cuentan con <b>3 años de garantía</b>.</p>
+      </div>
+    </div>
+    <p class="footer__legal">© <span id="year">2026</span> Rey Roller's. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<a class="wa-float" href="{{WA_GENERAL}}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+
+<script src="{{P}}js/main.js?v={{V_JS}}" defer></script>
+</body>
+</html>

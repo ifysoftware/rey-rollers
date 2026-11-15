@@ -1,0 +1,313 @@
+{
+  "products": [
+    {
+      "slug": "roller-blackout",
+      "group": "main",
+      "name": "Roller Blackout",
+      "tag": "A medida",
+      "short": "Bloquea la luz exterior y da máxima privacidad.",
+      "description": "Sistema diseñado para bloquear la entrada de luz exterior, ideal para dormitorios, salas audiovisuales y espacios que requieren máxima privacidad y control lumínico. Aporta aislamiento térmico y una estética limpia y contemporánea.",
+      "bullets": [
+        "Bloquea la entrada de luz exterior",
+        "Máxima privacidad y control lumínico",
+        "Aporta aislamiento térmico",
+        "Estética limpia y contemporánea"
+      ],
+      "ideal": [
+        "Dormitorios",
+        "Salas audiovisuales",
+        "Espacios que requieren privacidad"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "roller-sunscreen",
+      "group": "main",
+      "name": "Roller Sunscreen",
+      "tag": "A medida",
+      "short": "Luz natural controlada, con vista al exterior.",
+      "description": "Permite el paso controlado de luz natural manteniendo visibilidad hacia el exterior y protección contra rayos UV. Su tejido técnico reduce el deslumbramiento y mejora el confort térmico en oficinas y espacios residenciales.",
+      "bullets": [
+        "Paso controlado de luz natural",
+        "Mantiene la visibilidad hacia el exterior",
+        "Protección contra rayos UV",
+        "Reduce el deslumbramiento",
+        "Mejora el confort térmico"
+      ],
+      "ideal": [
+        "Oficinas",
+        "Espacios residenciales",
+        "Ventanales con mucho sol"
+      ],
+      "photos": [
+        "/uploads/roller-sunscreen-1.jpg",
+        "/uploads/roller-sunscreen-2.jpg"
+      ]
+    },
+    {
+      "slug": "roller-doble",
+      "group": "main",
+      "name": "Roller Doble",
+      "tag": "A medida",
+      "short": "Blackout + Sunscreen en un mismo vano.",
+      "description": "Sistema combinado que integra dos telas independientes (Blackout + Sunscreen) en un mismo vano, permitiendo alternar entre iluminación natural filtrada y oscurecimiento total según la necesidad del ambiente.",
+      "bullets": [
+        "Dos telas independientes en un mismo vano",
+        "Luz natural filtrada cuando la quieres",
+        "Oscurecimiento total cuando lo necesitas",
+        "Una sola instalación, dos funciones"
+      ],
+      "ideal": [
+        "Dormitorios y livings",
+        "Ambientes que cambian de uso durante el día"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "cortina-vertical",
+      "group": "main",
+      "name": "Cortina Vertical",
+      "tag": "A medida",
+      "short": "Para grandes ventanales y accesos a terraza.",
+      "description": "Solución versátil para grandes ventanales y accesos a terrazas. Facilita la regulación gradual de luz y privacidad mediante orientación de lamas, combinando funcionalidad y sobriedad estética.",
+      "bullets": [
+        "Regulación gradual de luz y privacidad",
+        "Orientación de lamas",
+        "Ideal para grandes ventanales",
+        "Funcionalidad y sobriedad estética"
+      ],
+      "ideal": [
+        "Grandes ventanales",
+        "Accesos a terrazas",
+        "Oficinas y livings"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "roller-duo-tradicional",
+      "group": "main",
+      "name": "Roller Dúo Tradicional Poliéster",
+      "tag": "A medida",
+      "short": "Franjas traslúcidas y opacas para graduar la luz.",
+      "description": "Diseño de franjas horizontales traslúcidas y opacas que se superponen para graduar la entrada de luz. Aporta dinamismo visual y control lumínico en espacios modernos.",
+      "bullets": [
+        "Franjas traslúcidas y opacas que se superponen",
+        "Gradúa la entrada de luz",
+        "Dinamismo visual en espacios modernos"
+      ],
+      "ideal": [
+        "Livings y comedores",
+        "Oficinas",
+        "Espacios modernos"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "roller-duo-blackout-premium",
+      "group": "main",
+      "name": "Roller Dúo Blackout Premium",
+      "tag": "A medida",
+      "short": "Mayor opacidad y terminación superior.",
+      "description": "Versión de mayor opacidad y terminación superior, que ofrece un equilibrio entre diseño sofisticado y mayor control de privacidad, ideal para ambientes que buscan elegancia y desempeño técnico.",
+      "bullets": [
+        "Mayor opacidad",
+        "Terminación superior",
+        "Diseño sofisticado y mayor control de privacidad"
+      ],
+      "ideal": [
+        "Dormitorios",
+        "Ambientes que buscan elegancia y desempeño técnico"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "toldo-proyectante",
+      "group": "main",
+      "name": "Toldo Proyectante",
+      "tag": "A medida",
+      "short": "Protección solar exterior para terrazas y ventanales.",
+      "description": "Sistema de protección solar exterior diseñado para ampliar y resguardar terrazas y ventanales. Disponible en versiones manuales o motorizadas, mejora el confort térmico y protege frente a la exposición directa al sol.",
+      "bullets": [
+        "Protección solar exterior",
+        "Versión manual o motorizada",
+        "Amplía y resguarda terrazas y ventanales",
+        "Mejora el confort térmico"
+      ],
+      "ideal": [
+        "Terrazas",
+        "Ventanales expuestos al sol"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "persiana-madera",
+      "group": "main",
+      "name": "Persiana de Madera",
+      "tag": "A medida",
+      "short": "Calidez natural y control preciso de la luz.",
+      "description": "Calidez natural y control preciso de la luz mediante lamas de madera. Una terminación noble para ambientes que buscan carácter y elegancia.",
+      "bullets": [
+        "Lamas de madera",
+        "Control preciso de la luz",
+        "Terminación noble"
+      ],
+      "ideal": [
+        "Livings y dormitorios",
+        "Ambientes con carácter"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "roller-exterior",
+      "group": "more",
+      "name": "Roller Exterior",
+      "tag": "",
+      "short": "Protección solar instalada por fuera del ventanal.",
+      "description": "Protección solar instalada por fuera del ventanal, que frena el calor antes de que llegue al interior.",
+      "bullets": [
+        "Instalación exterior",
+        "Frena el calor antes de que llegue al interior"
+      ],
+      "ideal": [
+        "Ventanales expuestos al sol"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "toldo-vertical",
+      "group": "more",
+      "name": "Toldo Vertical",
+      "tag": "",
+      "short": "Protección solar exterior en formato vertical.",
+      "description": "Protección solar exterior en formato vertical para terrazas y ventanales, con control de luz y privacidad.",
+      "bullets": [
+        "Formato vertical exterior",
+        "Control de luz y privacidad"
+      ],
+      "ideal": [
+        "Terrazas",
+        "Ventanales"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "persiana-aluminio",
+      "group": "more",
+      "name": "Persiana de Aluminio",
+      "tag": "",
+      "short": "Lamas orientables, durables y de bajo mantenimiento.",
+      "description": "Lamas de aluminio orientables: durabilidad, bajo mantenimiento y regulación precisa de la luz.",
+      "bullets": [
+        "Lamas de aluminio orientables",
+        "Durabilidad y bajo mantenimiento",
+        "Regulación precisa de la luz"
+      ],
+      "ideal": [
+        "Oficinas",
+        "Espacios de uso intensivo"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "persiana-exterior-aluminio",
+      "group": "more",
+      "name": "Persiana Exterior de Aluminio",
+      "tag": "",
+      "short": "Lamas exteriores que regulan luz y calor.",
+      "description": "Lamas exteriores orientables que regulan luz y calor, con la resistencia del aluminio.",
+      "bullets": [
+        "Lamas exteriores orientables",
+        "Regulan luz y calor",
+        "Resistencia del aluminio"
+      ],
+      "ideal": [
+        "Fachadas y ventanales expuestos"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "cierre-terraza-zipper",
+      "group": "more",
+      "name": "Cierre Terraza Zipper",
+      "tag": "Nuevo",
+      "short": "Cierre de terraza con sistema zipper.",
+      "description": "Cierre con sistema zipper que protege la terraza del sol y el viento sin perder la vista.",
+      "bullets": [
+        "Sistema zipper",
+        "Protege del sol y el viento",
+        "Mantiene la vista"
+      ],
+      "ideal": [
+        "Terrazas"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "eco-blackout",
+      "group": "eco",
+      "name": "Eco Blackout",
+      "tag": "Línea Eco",
+      "short": "Opción económica para oscurecer por completo.",
+      "description": "Alternativa económica en medidas estándar para quienes buscan bloquear la luz exterior. Consulta disponibilidad de medidas y colores.",
+      "bullets": [
+        "Alternativa económica",
+        "Medidas estándar",
+        "Bloquea la luz exterior"
+      ],
+      "ideal": [
+        "Dormitorios"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "eco-sunscreen",
+      "group": "eco",
+      "name": "Eco Sunscreen",
+      "tag": "Línea Eco",
+      "short": "Opción económica para filtrar la luz.",
+      "description": "Alternativa económica en medidas estándar para filtrar la luz natural sin perder la vista al exterior. Consulta disponibilidad de medidas y colores.",
+      "bullets": [
+        "Alternativa económica",
+        "Medidas estándar",
+        "Filtra la luz natural"
+      ],
+      "ideal": [
+        "Livings y oficinas"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "eco-duo-tradicional",
+      "group": "eco",
+      "name": "Eco Dúo Tradicional",
+      "tag": "Línea Eco",
+      "short": "Franjas traslúcidas y opacas, en versión económica.",
+      "description": "Alternativa económica en medidas estándar con franjas traslúcidas y opacas para graduar la luz. Consulta disponibilidad de medidas y colores.",
+      "bullets": [
+        "Alternativa económica",
+        "Medidas estándar",
+        "Franjas para graduar la luz"
+      ],
+      "ideal": [
+        "Livings y comedores"
+      ],
+      "photos": []
+    },
+    {
+      "slug": "eco-duo-sunout",
+      "group": "eco",
+      "name": "Eco Dúo Sunout",
+      "tag": "Línea Eco",
+      "short": "Dúo en versión económica.",
+      "description": "Alternativa económica en medidas estándar en versión dúo Sunout. Consulta disponibilidad de medidas y colores.",
+      "bullets": [
+        "Alternativa económica",
+        "Medidas estándar"
+      ],
+      "ideal": [
+        "Livings y oficinas"
+      ],
+      "photos": []
+    }
+  ]
+}

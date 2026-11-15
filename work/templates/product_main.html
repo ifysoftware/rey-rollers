@@ -1,0 +1,39 @@
+<header class="phead wm-dark">
+  <div class="container phead__in">
+    <nav class="crumbs" aria-label="Ruta"><a href="{{P}}">Inicio</a><span>/</span><a href="{{P}}#productos">Productos</a><span>/</span><b>{{NAME}}</b></nav>
+    <p class="eyebrow">{{TAG}}</p>
+    <h1>{{NAME}}</h1>
+    <p class="lead">{{SHORT}}</p>
+    <div class="phead__cta">
+      <a class="btn btn--primary" href="{{WA_PRODUCT}}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Cotizar este producto</a>
+      <a class="btn btn--ghost-light" href="{{P}}#productos">Ver todos los productos</a>
+    </div>
+  </div>
+</header>
+
+<section class="section pbody wm-light has-vtop">
+  {{VCUT_PBODY}}
+  <div class="container pbody__grid">
+    <div class="gallery reveal" data-gallery>
+      {{GALLERY}}
+    </div>
+    <div class="pinfo reveal">
+      <h2>Sobre este producto</h2>
+      <p class="lead">{{DESCRIPTION}}</p>
+      <h3>Características</h3>
+      <ul class="ticks">{{BULLETS}}</ul>
+      <h3>Ideal para</h3>
+      <ul class="chips chips--light">{{IDEAL}}</ul>
+      <div class="pinfo__cta">
+        <a class="btn btn--primary" href="{{WA_PRODUCT}}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Cotizar por WhatsApp</a>
+      </div>
+      <p class="pinfo__note"><svg class="ico"><use href="#i-shield"/></svg>3 años de garantía · Envíos a todo Chile</p>
+    </div>
+  </div>
+
+  <div class="container related">
+    <h3 class="subhead">Otros productos</h3>
+    <div class="pgrid pgrid--mini">{{RELATED}}
+    </div>
+  </div>
+</section>
