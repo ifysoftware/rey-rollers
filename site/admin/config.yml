@@ -3,7 +3,7 @@
 
 backend:
   name: github
-  repo: TU-USUARIO/rey-rollers      # TODO: usuario/repositorio de GitHub (privado)
+  repo: ifysoftware/rey-rollers
   branch: main
   commit_messages:
     update: 'Actualiza {{collection}} desde el panel'

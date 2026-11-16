@@ -104,12 +104,12 @@ def vcut(kind):
 
 
 SERVICES = [
-    ("i-ruler", "Fabricación a Medida", "Confeccionamos cortinas roller (Screen, Blackout, Dúo/Noche & Día), cortinas verticales y persianas de aluminio y madera, desarrolladas según medidas exactas y requerimientos específicos de cada espacio."),
-    ("i-sun", "Asesoría y Medición Técnica", "Realizamos visitas en terreno para evaluar orientación solar, niveles de privacidad y eficiencia térmica, recomendando el sistema y la tela más adecuada para cada ambiente."),
-    ("i-wrench", "Instalación Profesional", "Ejecutamos instalaciones con altos estándares de alineación, fijación y terminaciones, garantizando funcionamiento preciso y presentación impecable."),
-    ("i-bolt", "Automatización y Motorización", "Incorporamos sistemas motorizados y automatizados que optimizan confort y funcionalidad, permitiendo el control remoto o integración con soluciones de domótica."),
-    ("i-awning", "Toldos Proyectantes", "Fabricación e instalación de sistemas de protección solar exterior, manuales o motorizados, diseñados para ampliar y proteger terrazas y espacios al aire libre."),
-    ("i-shield", "Servicio Técnico y Postventa", "Mantenimiento, reparación, cambio de telas y modernización de sistemas existentes, asegurando continuidad y durabilidad en el tiempo."),
+    ("Fabricación a Medida", "Cada cortina se confecciona según las medidas exactas y los requerimientos específicos de tu espacio."),
+    ("Asesoría y Medición Técnica", "Visitas en terreno para evaluar orientación solar, privacidad y eficiencia térmica, y recomendar el sistema y la tela más adecuados."),
+    ("Instalación Profesional", "Instalaciones con altos estándares de alineación, fijación y terminaciones, para un funcionamiento preciso y una presentación impecable."),
+    ("Automatización y Motorización", "Sistemas motorizados y automatizados que suman confort: control remoto o integración con domótica."),
+    ("Envíos a Todo Chile", "Despachamos a todo el país, para que tu proyecto llegue donde estés."),
+    ("Servicio Técnico y Postventa", "Mantención, reparación, cambio de telas y modernización de sistemas existentes."),
 ]
 AREAS = [
     ("i-home", "Residencial", "Casas y departamentos: privacidad, confort térmico y una estética pensada para cada ambiente del hogar."),
@@ -191,7 +191,7 @@ def build():
       <li class="logo-tile" style="--tile:{bg}"><img src="assets/img/client-{f}.webp" alt="{n}" height="72" loading="lazy" decoding="async"></li>''' for f, n, bg in CLIENTS_MORE)
 
     services = "".join(f'''
-        <li class="feature reveal"><span class="feature__ico"><svg class="ico"><use href="#{i}"/></svg></span><h3>{t}</h3><p>{d}</p></li>''' for i, t, d in SERVICES)
+        <li class="svc reveal"><div class="svc__head" aria-hidden="true"><span>{n:02d}</span></div><div class="svc__body"><h3>{t}</h3><p>{d}</p></div></li>''' for n, (t, d) in enumerate(SERVICES, 1))
     areas = "".join(f'''
         <article class="area reveal"><span class="area__ico"><svg class="ico"><use href="#{i}"/></svg></span><h3>{t}</h3><p>{d}</p></article>''' for i, t, d in AREAS)
 
