@@ -172,6 +172,9 @@ import hashlib
 def _h(p): return hashlib.md5(open(p,'rb').read()).hexdigest()[:8]
 VER={}
 
+SITE_URL = "https://reyrollers.cl"
+
+
 def build():
     VER['css']=_h(os.path.join(SITE,'css','styles.css')); VER['js']=_h(os.path.join(SITE,'js','main.js'))
     data = load_products()
@@ -245,8 +248,8 @@ def build():
             return f"{m.group(1)}{rel}?v={_hc[fp]}"
         return re.sub(r'((?:\.\./)*)(assets/[\w\-./]+?\.(?:webp|avif|jpe?g|png|svg))(?![\w?])', sub, html)
 
-    def wrap(main, prefix, title, desc, body_class, loader, head_extra, wa_general, wa_visit):
-        return bust(page.replace("{{MAIN}}", main).replace("{{TITLE}}", escape(title)).replace("{{DESC}}", escape(desc, quote=True))
+    def wrap(main, prefix, title, desc, body_class, loader, head_extra, wa_general, wa_visit, canon=SITE_URL + "/"):
+        return bust(page.replace("{{CANON}}", canon).replace("{{MAIN}}", main).replace("{{TITLE}}", escape(title)).replace("{{DESC}}", escape(desc, quote=True))
                 .replace("{{BODY_CLASS}}", body_class).replace("{{LOADER}}", loader).replace("{{HEAD_EXTRA}}", head_extra)
                 .replace("{{SPRITE}}", SPRITE).replace("{{SEAL}}", SEAL).replace("{{VCUT_FOOT}}", vcut("dark-top"))
                 .replace("{{WA_GENERAL}}", wa_general).replace("{{WA_VISITA}}", wa_visit).replace("{{V_CSS}}", VER["css"]).replace("{{V_JS}}", VER["js"]).replace("{{P}}", prefix))
@@ -275,8 +278,14 @@ def build():
              .replace("{{VCUT_PBODY}}", vcut("cream-top")).replace("{{P}}", P))
         out = os.path.join(SITE, "productos", p["slug"]); os.makedirs(out)
         open(os.path.join(out, "index.html"), "w", encoding="utf8").write(
-            wrap(m, P, f"{p['name']} — Rey Roller's", f"{p['name']}: {p['short']} Fabricación e instalación en Santiago, envíos a todo Chile y 3 años de garantía.",
-                 "page-product", "", "", wg.replace("{{P}}", P), wv))
+            wrap(m, P, f"{p['name']} | Rey Rollers", f"{p['name']}: {p['short']} Fabricación e instalación en Santiago, envíos a todo Chile y 3 años de garantía.",
+                 "page-product", "", "", wg.replace("{{P}}", P), wv, f"{SITE_URL}/productos/{p['slug']}/"))
+    urls = [SITE_URL + "/"] + [f"{SITE_URL}/productos/{p['slug']}/" for p in data]
+    open(os.path.join(SITE, "sitemap.xml"), "w", encoding="utf8").write(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls) + "</urlset>\n")
+    open(os.path.join(SITE, "robots.txt"), "w", encoding="utf8").write(
+        f"User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /uploads/\n\nSitemap: {SITE_URL}/sitemap.xml\n")
     print("OK: index + %d productos" % len(data), "| fotos:", {k: len(v) for k, v in photos.items() if v})
 
 
