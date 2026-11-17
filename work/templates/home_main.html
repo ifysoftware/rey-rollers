@@ -1,14 +1,5 @@
-<!-- SECCIÓN 1 — BANNER: logotipo completo + fondo oficial -->
-<header class="banner" id="inicio">
-  <div class="container banner__in">
-    <img class="banner__logo" src="assets/logo-full-white.svg" alt="Rey Roller's — Expertos en cortinas" width="1078" height="430">
-    <p class="banner__line"><span>Cortinas roller</span><i></i><span>Persianas</span><i></i><span>Toldos</span></p>
-  </div>
-  {{VCUT_BANNER}}
-</header>
-
-<!-- SECCIÓN 2 — PORTADA: horizontal, se ve el ambiente completo -->
-<section class="hero" aria-label="Presentación">
+<!-- PORTADA: horizontal, se ve el ambiente completo -->
+<section class="hero" id="inicio" aria-label="Presentación">
   <div class="hero__media" style="background-image:url('{{LQIP}}')">
     <picture>
       <source type="image/avif" srcset="assets/img/hero/hero-640.avif 640w, assets/img/hero/hero-960.avif 960w, assets/img/hero/hero-1280.avif 1280w, assets/img/hero/hero-1600.avif 1600w, assets/img/hero/hero-2048.avif 2048w" sizes="100vw">
@@ -20,13 +11,13 @@
   <div class="container hero__in">
     <div class="hero__copy">
       <p class="eyebrow">Expertos en cortinas</p>
-      <h1>Donde la luz encuentra <em>su medida.</em></h1>
-      <p class="hero__lead">Soluciones a medida en cortinas roller, persianas y protección solar. Los detalles marcan la diferencia.</p>
+      <h1>Los detalles marcan <em>la&nbsp;diferencia.</em></h1>
+      <p class="hero__lead">Soluciones a medida en cortinas roller, persianas y protección solar, con asesoría técnica en cada proyecto.</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="{{WA_GENERAL}}" target="_blank" rel="noopener">Cotiza tu proyecto <svg class="ico"><use href="#i-arrow"/></svg></a>
         <a class="btn btn--ghost-light" href="#productos">Ver productos</a>
       </div>
-      <p class="hero__rating"><span class="stars" aria-hidden="true"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><b>5.0</b> · Reseñas de clientes en Google</p>
+      <p class="hero__line"><span>Cortinas roller</span><i></i><span>Persianas</span><i></i><span>Toldos</span></p>
     </div>
   </div>
 </section>
@@ -37,13 +28,13 @@
   <div class="container about">
     <div class="about__text reveal">
       <p class="eyebrow">¿Quiénes somos?</p>
-      <h2>Los detalles marcan <em>la diferencia.</em></h2>
+      <h2>Detalles que <em>transforman tus espacios.</em></h2>
       <p class="lead">En Rey Roller's desarrollamos soluciones a medida en cortinas roller, persianas y sistemas de protección solar, combinando diseño, tecnología y asesoría especializada. Cada proyecto es abordado con profesionalismo, precisión técnica y atención personalizada.</p>
       <p class="lead">Nuestro compromiso es acompañar a cada cliente en todo el proceso, asegurando acabados impecables y resultados que reflejen nuestro principio fundamental.</p>
     </div>
     <figure class="about__img reveal">
-      <img src="assets/img/about.webp" alt="Ambiente con cortinas instaladas" width="720" height="846" loading="lazy" decoding="async">
-      <img class="about__badge" src="assets/img/logo-round.webp" alt="Rey Roller's — Expertos en cortinas" width="640" height="640" loading="lazy" decoding="async">
+      <img src="assets/img/about.webp" alt="Living con cortina roller y cortina de paneles instaladas" width="720" height="864" loading="lazy" decoding="async">
+      <img class="about__badge" src="assets/img/logo-round.webp" alt="Rey Roller's — Expertos en cortinas" width="800" height="800" loading="lazy" decoding="async">
     </figure>
   </div>
 
@@ -89,28 +80,8 @@
 
     <div class="cmp reveal" id="cmp" style="--pos:50%">
       <div class="cmp__scene">
-        <svg class="cmp__view" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="cmp-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f8fe6"/><stop offset=".55" stop-color="#a9d4fb"/><stop offset="1" stop-color="#eef7ff"/></linearGradient>
-            <radialGradient id="cmp-sun"><stop offset="0" stop-color="#fff"/><stop offset=".2" stop-color="#fff6d6" stop-opacity=".96"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient>
-            <pattern id="cmp-win" width="10" height="12" patternUnits="userSpaceOnUse"><rect x="2" y="3" width="5" height="6" fill="#8fa3ba"/></pattern>
-          </defs>
-          <rect width="800" height="500" fill="url(#cmp-sky)"/>
-          <circle cx="640" cy="92" r="210" fill="url(#cmp-sun)"/>
-          <g fill="#fff" opacity=".9"><ellipse cx="140" cy="96" rx="90" ry="17"/><ellipse cx="196" cy="84" rx="54" ry="15"/><ellipse cx="420" cy="58" rx="68" ry="12"/></g>
-          <path d="M0 300 L60 250 L110 280 L190 190 L250 235 L320 160 L400 230 L470 185 L540 240 L620 170 L700 235 L760 205 L800 225 V360 H0Z" fill="#a3b9d3"/>
-          <g fill="#fff" opacity=".95"><path d="M168 212 L190 190 L214 214 L201 208 L190 219 L179 208Z"/><path d="M296 190 L320 160 L347 192 L333 184 L320 199 L308 184Z"/><path d="M455 205 L470 185 L489 208 L478 201 L470 212 L462 201Z"/><path d="M596 199 L620 170 L647 201 L633 193 L620 206 L606 193Z"/><path d="M744 222 L760 205 L776 224 L767 219 L760 228 L752 219Z"/></g>
-          <path d="M0 336 L90 296 L170 326 L260 286 L350 322 L450 292 L560 326 L660 296 L760 324 L800 310 V380 H0Z" fill="#86a1c2"/>
-          <g fill="#b6c4d5"><rect x="20" y="330" width="60" height="66"/><rect x="88" y="352" width="44" height="44"/><rect x="140" y="338" width="70" height="58"/><rect x="222" y="320" width="52" height="76"/><rect x="290" y="300" width="40" height="96"/><rect x="338" y="262" width="38" height="134"/><rect x="384" y="324" width="56" height="72"/><rect x="448" y="288" width="34" height="108"/><rect x="490" y="336" width="60" height="60"/><rect x="560" y="266" width="46" height="130"/><rect x="616" y="330" width="66" height="66"/><rect x="690" y="300" width="50" height="96"/><rect x="748" y="344" width="60" height="52"/></g><path d="M356 262v-26M577 266v-30" stroke="#b5c3d3" stroke-width="3"/>
-          <g fill="url(#cmp-win)" opacity=".55"><rect x="20" y="330" width="60" height="66"/><rect x="88" y="352" width="44" height="44"/><rect x="140" y="338" width="70" height="58"/><rect x="222" y="320" width="52" height="76"/><rect x="290" y="300" width="40" height="96"/><rect x="338" y="262" width="38" height="134"/><rect x="384" y="324" width="56" height="72"/><rect x="448" y="288" width="34" height="108"/><rect x="490" y="336" width="60" height="60"/><rect x="560" y="266" width="46" height="130"/><rect x="616" y="330" width="66" height="66"/><rect x="690" y="300" width="50" height="96"/><rect x="748" y="344" width="60" height="52"/></g>
-          <path d="M0 392 C140 372 260 380 380 388 S620 376 800 386 V500 H0Z" fill="#7fb46e"/>
-          <path d="M0 424 C170 402 320 420 470 414 S700 398 800 416 V500 H0Z" fill="#5c9a49"/>
-          <rect y="462" width="800" height="38" fill="#4a8239"/>
-          <g><rect x="96" y="392" width="9" height="46" fill="#5b4631"/><circle cx="100" cy="382" r="30" fill="#3f7d34"/><circle cx="84" cy="398" r="20" fill="#468a3a"/><circle cx="118" cy="398" r="20" fill="#468a3a"/>
-             <rect x="672" y="388" width="9" height="50" fill="#5b4631"/><circle cx="676" cy="376" r="34" fill="#3f7d34"/><circle cx="657" cy="396" r="22" fill="#468a3a"/><circle cx="696" cy="396" r="22" fill="#468a3a"/></g>
-        </svg>
-        <span class="cmp__mull cmp__mull--v"></span><span class="cmp__mull cmp__mull--h"></span>
-
+        <img class="cmp__view" src="{{P}}assets/img/cmp-view.webp" srcset="{{P}}assets/img/cmp-view-800.webp 800w, {{P}}assets/img/cmp-view.webp 1240w" sizes="(min-width:1100px) 1020px, 94vw" width="1240" height="698" alt="" loading="lazy" decoding="async">
+        
         <div class="cmp__fabric cmp__fabric--sun" aria-hidden="true"><i class="hem"></i></div>
         <div class="cmp__fabric cmp__fabric--black" aria-hidden="true"><i class="hem"></i></div>
         <span class="cmp__rail" aria-hidden="true"></span>
@@ -168,7 +139,6 @@
   {{VCUT_AREAS}}
   <div class="container">
     <header class="sec-head sec-head--center reveal">
-      <p class="eyebrow eyebrow--center">Dónde trabajamos</p>
       <h2>Para cada espacio, <em>una solución.</em></h2>
       <p class="lead">Abarcamos proyectos residenciales, corporativos e industriales, con el mismo estándar de precisión.</p>
     </header>
@@ -183,7 +153,7 @@
   <div class="container">
     <header class="sec-head sec-head--center reveal">
       <p class="eyebrow eyebrow--center">Testimonios</p>
-      <h2>Clientes que nos calificaron con <em>5 estrellas</em></h2>
+      <h2>Una experiencia que nos distingue con <em>5&nbsp;estrellas</em></h2>
       <p class="lead">Reseñas reales publicadas en Google.</p>
     </header>
     <div class="carousel reveal" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Testimonios de clientes">
@@ -197,12 +167,10 @@
     </div>
 
     <header class="sec-head sec-head--center sec-head--sm reveal">
-      <p class="eyebrow eyebrow--center">Han confiado en nosotros</p>
+      <h2 class="h2--sub">Han confiado en nosotros</h2>
     </header>
-    <ul class="trust reveal">{{CLIENTS_FEATURED}}
-    </ul>
   </div>
-  <div class="logos" aria-label="Más clientes que han confiado en Rey Roller's">
+  <div class="logos" aria-label="Clientes que han confiado en Rey Roller's">
     <ul class="logos__track" id="logos">{{CLIENTS_MARQUEE}}
     </ul>
   </div>

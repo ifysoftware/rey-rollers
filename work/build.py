@@ -116,8 +116,7 @@ AREAS = [
     ("i-building", "Corporativo", "Oficinas, clínicas, comercios e instituciones: control de luz y deslumbramiento con una imagen profesional."),
     ("i-factory", "Industrial", "Plantas, flotas y recintos de operación: soluciones robustas y a gran escala, con instalación coordinada."),
 ]
-CLIENTS_FEATURED = [("carozzi", "Carozzi"), ("culligan", "Culligan"), ("heal", "Heal Sport Therapy & Wellness")]
-CLIENTS_MORE = [("odontologia", "Odontología Los Dominicos", "#ffffff"), ("dicaer", "Buses Dicaer", "#e5e5e5"), ("santiago", "Municipalidad de Santiago", "#005ea6")]
+CLIENTS_MORE = [("carozzi", "Carozzi", "#ffffff"), ("culligan", "Culligan", "#ffffff"), ("heal", "Heal Sport Therapy & Wellness", "#ffffff"), ("odontologia", "Odontología Los Dominicos", "#ffffff"), ("dicaer", "Buses Dicaer", "#e5e5e5"), ("santiago", "Municipalidad de Santiago", "#005ea6")]
 
 
 def pcard(p, photos, prefix, mini=False):
@@ -185,10 +184,8 @@ def build():
             <figcaption><span class="avatar" aria-hidden="true">{n}</span><span><b>Nombre del cliente</b><small>Cliente verificado en Google</small></span></figcaption>
           </figure>''' for n in range(1, 8))
 
-    featured = "".join(f'''
-      <li class="trust__tile trust__tile--{f}"><img src="assets/img/client-{f}.webp" alt="{n}" loading="lazy" decoding="async"></li>''' for f, n in CLIENTS_FEATURED)
     marquee = "".join(f'''
-      <li class="logo-tile" style="--tile:{bg}"><img src="assets/img/client-{f}.webp" alt="{n}" height="72" loading="lazy" decoding="async"></li>''' for f, n, bg in CLIENTS_MORE)
+      <li class="logo-tile" style="--tile:{bg}"><img src="assets/img/client-{f}.webp" alt="{n}" height="96" loading="lazy" decoding="async"></li>''' for f, n, bg in CLIENTS_MORE)
 
     services = "".join(f'''
         <li class="svc reveal"><div class="svc__head" aria-hidden="true"><span>{n:02d}</span></div><div class="svc__body"><h3>{t}</h3><p>{d}</p></div></li>''' for n, (t, d) in enumerate(SERVICES, 1))
@@ -196,14 +193,14 @@ def build():
         <article class="area reveal"><span class="area__ico"><svg class="ico"><use href="#{i}"/></svg></span><h3>{t}</h3><p>{d}</p></article>''' for i, t, d in AREAS)
 
     home_html = (home
-        .replace("{{VCUT_BANNER}}", vcut("dark-bottom")).replace("{{VCUT_ABOUT}}", vcut("dark-top"))
+        .replace("{{VCUT_ABOUT}}", vcut("dark-top"))
         .replace("{{VCUT_PRODUCTS}}", vcut("cream-top")).replace("{{VCUT_CMP}}", vcut("dark-top"))
         .replace("{{VCUT_ECO}}", vcut("cream-top")).replace("{{VCUT_AREAS}}", vcut("dark-top"))
         .replace("{{VCUT_FIDEL}}", vcut("cream-top"))
         .replace("{{PRODUCTS_MAIN}}", mk("main")).replace("{{PRODUCTS_MORE}}", mk("more", mini=True))
         .replace("{{PRODUCTS_ECO}}", mk("eco", mini=True))
         .replace("{{SERVICES}}", services).replace("{{AREAS}}", areas)
-        .replace("{{TESTIMONIALS}}", testi).replace("{{CLIENTS_FEATURED}}", featured).replace("{{CLIENTS_MARQUEE}}", marquee)
+        .replace("{{TESTIMONIALS}}", testi).replace("{{CLIENTS_MARQUEE}}", marquee)
         .replace("{{LQIP}}", lqip))
 
     head_home = '''<link rel="preload" as="image" type="image/avif" imagesrcset="assets/img/hero/hero-640.avif 640w, assets/img/hero/hero-960.avif 960w, assets/img/hero/hero-1280.avif 1280w, assets/img/hero/hero-1600.avif 1600w, assets/img/hero/hero-2048.avif 2048w" imagesizes="100vw" fetchpriority="high">

@@ -308,6 +308,24 @@
         "Livings y oficinas"
       ],
       "photos": []
+    },
+    {
+      "slug": "toldo-proyectante-basico",
+      "group": "eco",
+      "name": "Toldo Proyectante Básico",
+      "tag": "Línea Eco",
+      "short": "Protección solar exterior en versión básica.",
+      "description": "Alternativa económica de protección solar exterior para terrazas y ventanales, en versión básica. Consulta disponibilidad de medidas, colores y tipo de accionamiento.",
+      "bullets": [
+        "Alternativa económica",
+        "Protección solar exterior",
+        "Versión básica"
+      ],
+      "ideal": [
+        "Terrazas",
+        "Ventanales expuestos al sol"
+      ],
+      "photos": []
     }
   ]
 }
