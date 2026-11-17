@@ -11,6 +11,7 @@ backend:
     deleteMedia: 'Borra foto {{path}}'
 
 locale: es
+logo_url: /assets/logo-dark.svg
 site_url: /
 display_url: /
 publish_mode: simple

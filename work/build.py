@@ -188,16 +188,26 @@ def build():
     def mk(group, prefix="", mini=False, items=None):
         return "".join(pcard(p, photos[p["slug"]], prefix, mini) for p in (items or [x for x in data if x["group"] == group]))
 
-    # -------- testimonios (marcadores hasta tener las reseñas reales)
+    # -------- testimonios (reseñas reales de Google)
+    REVIEWS = [
+        ("Ana Paz Villegas Valdes", "AP", "Quiero agradecer al equipo de Rey Roller por el excelente servicio de instalación de mis nuevas cortinas."),
+        ("Cecilia Olivares", "CO", "Excelente calidad de las cortinas roller, a medida y muy buen servicio en la instalación. El personal muy profesional y atento a las necesidades del cliente. Lo recomiendo 100% ya que es la segunda vez que contrato con ellos."),
+        ("Patricio Iturriaga", "PI", "Trabajo súper rápido, cortinas de muy buena calidad. Totalmente confiable la empresa. Todo ok."),
+        ("Lorena Quiroz", "LQ", "¡Estupendo trabajo! Quedó muy lindo, limpio y muy profesional. Recomendable. Es el segundo trabajo que hago con ellos."),
+        ("Cristobal del Fierro Berrios", "CF", "Contraté el servicio de instalación de una cortina roller con Rey Rollers y quedé muy conforme con el resultado. La atención fue cercana y profesional desde el primer momento, y la instalación fue rápida y prolija. El resultado final superó lo que esperaba. Sin duda los recomiendo, un muy buen trabajo."),
+        ("Matías González Tapia", "MG", "Excelente atención, muestras de los productos y asesoría del vendedor don Nicolas Reyes, ayudan mucho en la toma de decisión. Precio acorde con la calidad de los productos, instalación dentro de los plazos establecidos. Los recomiendo 100%."),
+        ("Fernando Inzunza", "FI", "Solicité los servicios de Rey Rollers y quedé muy satisfecho por su trabajo, responsabilidad y calidad de los servicios. He quedado muy satisfecho con las cortinas instaladas con Nicolas. Lo recomiendo 100%."),
+        ("Natalia Cancino Oyarzún", "NC", "Excelente servicio, dan opciones de pago y son puntuales en llegar a la instalación de las cortinas. Son cortinas resistentes y de buen material: tengo 3 hijos pequeños y han resistido muy bien. 100% recomendado."),
+    ]
     testi = "".join(f'''
-          <figure class="tcard" role="group" aria-roledescription="diapositiva" aria-label="{n} de 7">
+          <figure class="tcard" role="group" aria-roledescription="diapositiva" aria-label="{n} de {len(REVIEWS)}">
             <div class="tcard__top">
               <span class="stars" role="img" aria-label="5 estrellas">{'<svg class="ico"><use href="#i-star"/></svg>' * 5}</span>
               <span class="tcard__g"><b>G</b> Reseña en Google</span>
             </div>
-            <blockquote data-placeholder>Reseña {n} de 7: aquí va el comentario real de Google del cliente, tal como fue publicado.</blockquote>
-            <figcaption><span class="avatar" aria-hidden="true">{n}</span><span><b>Nombre del cliente</b><small>Cliente verificado en Google</small></span></figcaption>
-          </figure>''' for n in range(1, 8))
+            <blockquote>{txt}</blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">{ini}</span><span><b>{name}</b><small>Cliente de Rey Rollers</small></span></figcaption>
+          </figure>''' for n, (name, ini, txt) in enumerate(REVIEWS, 1))
 
     marquee = "".join(f'''
       <li class="logo-tile" style="--tile:{bg}"><img src="assets/img/client-{f}.webp" alt="{n}" height="96" loading="lazy" decoding="async"></li>''' for f, n, bg in CLIENTS_MORE)

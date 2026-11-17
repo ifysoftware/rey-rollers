@@ -1,0 +1,74 @@
+/* Panel de Rey Roller's — paleta y tipografía de la marca (negro, naranjo, crema). */
+@font-face{font-family:"Plus Jakarta Sans";font-weight:500;src:url(/assets/fonts/plus-jakarta-sans-latin-500-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Plus Jakarta Sans";font-weight:700;src:url(/assets/fonts/plus-jakarta-sans-latin-700-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Plus Jakarta Sans";font-weight:800;src:url(/assets/fonts/plus-jakarta-sans-latin-800-normal.woff2) format("woff2");font-display:swap}
+:root{--rr-orange:#FA6801;--rr-orange-d:#d85800;--rr-dark:#0B0B0C;--rr-cream:#F6F2EC;--rr-line:#E7DFD2}
+html,body,body *{font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+body{background:var(--rr-cream)!important;color:var(--rr-dark)}
+
+/* ---------- login ---------- */
+[class*="StyledAuthenticationPage"]{background:var(--rr-cream)!important}
+[class*="StyledAuthenticationPage"] img{width:min(300px,70vw)!important;height:auto!important;margin-bottom:12px}
+[class*="LoginButton"]{background:var(--rr-orange)!important;color:#fff!important;border-radius:999px!important;padding:14px 34px!important;font-weight:800!important;box-shadow:0 14px 30px -14px rgba(250,104,1,.8)}
+[class*="LoginButton"]:hover{background:var(--rr-orange-d)!important}
+[class*="GoBackButtonStyle"]{color:#5b5348!important}
+
+/* ---------- barra superior con logo ---------- */
+[class*="AppHeader-css"]{background:var(--rr-dark)!important;border-bottom:3px solid var(--rr-orange);box-shadow:0 8px 24px -12px rgba(0,0,0,.5)!important}
+[class*="AppHeaderContent"]{padding-left:22px!important}
+[class*="AppHeaderContent"]::before{content:"";display:block;flex:none;width:132px;height:36px;margin-right:34px;background:url(/assets/logo-white.svg) left center/contain no-repeat}
+[class*="AppHeaderNavLink"],[class*="AppHeaderButton"]{color:#fff!important;background:transparent!important;border-radius:10px!important;font-weight:700!important}
+[class*="AppHeaderNavLink"] svg,[class*="AppHeaderButton"] svg{color:inherit}
+[class*="AppHeaderNavLink"]:hover,[class*="AppHeaderButton"]:hover{background:rgba(255,255,255,.1)!important}
+.header-link-active{color:var(--rr-orange)!important;background:rgba(250,104,1,.14)!important}
+[class*="AppHeaderSiteLink"]{color:#fff!important;font-weight:700}
+[class*="AppHeaderActions"] *{color:#fff}
+[class*="AvatarDropdownButton"]{background:transparent!important}
+
+/* ---------- barra lateral y listas ---------- */
+[class*="SidebarContainer"]{border-radius:20px!important;box-shadow:0 18px 40px -26px rgba(0,0,0,.35)!important;border:1px solid var(--rr-line)}
+[class*="SidebarHeading"]{font-weight:800!important;letter-spacing:-.01em}
+[class*="SidebarNavLink"]{font-weight:700!important;color:#3a352e!important;border-left:4px solid transparent!important;border-radius:0 12px 12px 0}
+.sidebar-active{background:rgba(250,104,1,.12)!important;color:var(--rr-orange-d)!important;border-left-color:var(--rr-orange)!important}
+.sidebar-active svg{color:var(--rr-orange)!important}
+[class*="CollectionTopContainer"]{border-radius:20px!important;border:1px solid var(--rr-line);box-shadow:0 18px 40px -26px rgba(0,0,0,.3)!important}
+[class*="CollectionTopHeading"]{font-weight:800!important;letter-spacing:-.02em}
+[class*="ListCard-card"]{border-radius:16px!important;border:1px solid var(--rr-line);box-shadow:none!important;transition:transform .2s,border-color .2s,box-shadow .2s}
+[class*="ListCard-card"]:hover{transform:translateY(-2px);border-color:var(--rr-orange);box-shadow:0 14px 28px -20px rgba(250,104,1,.8)!important}
+[class*="ListCardTitle"]{font-weight:700!important}
+[class*="SearchInput"]:focus{border-color:var(--rr-orange)!important;box-shadow:0 0 0 3px rgba(250,104,1,.18)!important}
+[class*="ViewControlsButton"][class*="active"],[class*="ViewControlsButton"]:hover{color:var(--rr-orange)!important}
+
+/* ---------- editor ---------- */
+[class*="ToolbarContainer"]{border-top:3px solid var(--rr-orange);background:#fff!important;border-bottom:1px solid var(--rr-line)!important;box-shadow:0 10px 26px -20px rgba(0,0,0,.35)!important}
+[class*="PublishButton"],[class*="SaveButton"],button[class*="ToolbarDropdown"][class*="default"]{background:var(--rr-orange)!important;color:#fff!important;border-radius:12px!important;font-weight:800!important}
+[class*="PublishButton"]:hover,[class*="SaveButton"]:hover{background:var(--rr-orange-d)!important}
+[class*="ToolbarSectionBackLink"]{color:var(--rr-dark)!important}
+[class*="ToolbarSubSectionFirst"]{font-weight:700}
+[class*="ToolbarSectionMeta"]{font-weight:800}
+
+input[type="text"],textarea,select{border-radius:14px!important;border:1.5px solid #d9cfbf!important;background:#fff!important;font-size:15px!important;color:var(--rr-dark)!important}
+input[type="text"]:focus,textarea:focus{border-color:var(--rr-orange)!important;box-shadow:0 0 0 4px rgba(250,104,1,.16)!important;outline:none!important}
+[class*="ControlContainer"] label,[class*="FieldLabel"]{font-weight:800!important;letter-spacing:.04em;border-radius:8px 8px 0 0!important;background:#ece4d6!important;color:#5b5348!important}
+[class*="FieldLabel"][class*="active"],[class*="ControlContainer"][class*="active"] [class*="FieldLabel"]{background:var(--rr-orange)!important;color:#fff!important}
+[class*="ControlContainer"] [class*="Hint"],[class*="FieldHint"]{color:#6d6457!important}
+
+/* botones de imagen */
+[class*="FileWidgetButton"]{border-radius:999px!important;font-weight:700!important;background:rgba(250,104,1,.12)!important;color:var(--rr-orange-d)!important}
+[class*="FileWidgetButton"]:hover{background:rgba(250,104,1,.22)!important}
+[class*="FileWidgetButtonRemove"]{background:#fde8e8!important;color:#b42318!important}
+[class*="PublishedButton"]{background:#e6f6ec!important;color:#15733a!important;border-radius:12px!important;font-weight:800!important}
+
+/* biblioteca de imágenes */
+[class*="MediaLibraryTop"] button,[class*="MediaLibraryModal"] button{border-radius:12px!important;font-weight:700!important}
+[class*="MediaLibraryModal"]{border-radius:22px!important}
+[class*="MediaLibraryCard"]{border-radius:14px!important}
+[class*="MediaLibraryCard"][class*="selected"],[class*="MediaLibraryCard"][class*="Selected"]{border-color:var(--rr-orange)!important}
+
+/* ajustes finos */
+[class*="AppHeaderContent"]::before{align-self:center}
+[class*="AppHeader"] [class*="IconWrapper"],[class*="AppHeader"] svg{color:inherit!important}
+.header-link-active svg{color:var(--rr-orange)!important}
+[class*="UploadButton"],[class*="MediaLibraryButton"][class*="upload"]{background:var(--rr-orange)!important;color:#fff!important}
+[class*="InsertButton"],[class*="MediaLibraryButton"][class*="insert"]{background:var(--rr-orange)!important;color:#fff!important}
+[class*="DeleteButton"]{background:#fde8e8!important;color:#b42318!important}
