@@ -51,12 +51,81 @@
     Object.keys(map).forEach(function (id) { var s = d.getElementById(id); if (s) spy.observe(s); });
   }
 
-  /* ---- Comparador Blackout / Sunscreen ---- */
-  var cmp = d.getElementById('cmp'), range = d.getElementById('cmpRange');
-  if (cmp && range) {
-    var touch = function () { cmp.classList.add('touched'); };
-    range.addEventListener('input', function () { cmp.style.setProperty('--pos', range.value + '%'); touch(); });
-    ['pointerdown', 'keydown', 'touchstart'].forEach(function (ev) { range.addEventListener(ev, touch, { passive: true }); });
+  /* ---- Comparador: la cortina baja y se compara Blackout / Sunscreen ---- */
+  var cmp = d.getElementById('cmp');
+  if (cmp) {
+    var scene = d.getElementById('cmpScene'), knob = d.getElementById('cmpKnob'), range = d.getElementById('cmpRange'), link = d.getElementById('cmpLink');
+    var tabs = cmp.querySelectorAll('.cmp__tab');
+    var FAB = {
+      black: { l: 0, v: 0, p: 1, name: 'Roller Blackout', href: 'productos/roller-blackout/' },
+      sun: { l: 0.35, v: 0.8, p: 0.45, name: 'Roller Sunscreen', href: 'productos/roller-sunscreen/' }
+    };
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var fab = 'sun', dd = 1, raf = 0, touched = false;
+    var $ = function (id) { return d.getElementById(id); };
+    var words = function (v, set) { for (var i = 0; i < set.length; i++) { if (v >= set[i][0]) return set[i][1]; } return set[set.length - 1][1]; };
+    var W_LUZ = [[0.96, 'Toda la luz'], [0.6, 'Mucha luz'], [0.2, 'Luz filtrada'], [0.03, 'Muy poca'], [0, 'Sin luz']];
+    var W_VISTA = [[0.96, 'Completa'], [0.6, 'Se mantiene'], [0.2, 'Parcial'], [0.03, 'Casi nula'], [0, 'Sin vista']];
+    var W_PRIV = [[0.9, 'Máxima'], [0.3, 'Parcial'], [0.03, 'Baja'], [0, 'Ninguna']];
+    function meter(key, val, W) {
+      $('m' + key + 'Bar').style.setProperty('--w', Math.round(val * 100) + '%');
+      $('m' + key + 'V').textContent = Math.round(val * 100) + '%';
+      $('m' + key + 'T').textContent = words(val, W);
+    }
+    function render() {
+      var f = FAB[fab];
+      cmp.style.setProperty('--d', dd);
+      range.value = Math.round(dd * 100);
+      meter('Luz', (1 - dd) + dd * f.l, W_LUZ);
+      meter('Vista', (1 - dd) + dd * f.v, W_VISTA);
+      meter('Priv', dd * f.p, W_PRIV);
+    }
+    function stop() { if (raf) { cancelAnimationFrame(raf); raf = 0; } }
+    function go(to, ms, done) {
+      stop();
+      if (reduce || ms <= 0) { dd = to; render(); if (done) done(); return; }
+      var from = dd, t0 = performance.now();
+      (function step(t) {
+        var k = Math.min(1, (t - t0) / ms), e = 1 - Math.pow(1 - k, 3);
+        dd = from + (to - from) * e; render();
+        if (k < 1) raf = requestAnimationFrame(step); else { raf = 0; if (done) done(); }
+      })(t0);
+    }
+    function touch() { touched = true; cmp.classList.add('touched'); stop(); }
+    function setFab(next) {
+      if (next === fab) return;
+      fab = next; cmp.setAttribute('data-fabric', fab);
+      tabs.forEach(function (t) { t.setAttribute('aria-pressed', t.getAttribute('data-fabric') === fab ? 'true' : 'false'); });
+      link.href = FAB[fab].href; link.firstChild.nodeValue = 'Ver ' + FAB[fab].name + ' ';
+      go(0, 450, function () { go(1, 1500); });   /* sube y vuelve a bajar con la tela elegida */
+    }
+    tabs.forEach(function (t) { t.addEventListener('click', function () { touched = true; cmp.classList.add('touched'); setFab(t.getAttribute('data-fabric')); }); });
+    range.addEventListener('input', function () { touch(); dd = range.value / 100; render(); });
+
+    /* arrastrar la manilla */
+    var drag = false;
+    function move(e) {
+      var r = scene.getBoundingClientRect();
+      dd = Math.max(0, Math.min(1, (e.clientY - r.top) / (r.height * 0.94)));
+      render();
+    }
+    knob.addEventListener('pointerdown', function (e) { drag = true; touch(); knob.setPointerCapture(e.pointerId); e.preventDefault(); });
+    knob.addEventListener('pointermove', function (e) { if (drag) move(e); });
+    ['pointerup', 'pointercancel'].forEach(function (ev) { knob.addEventListener(ev, function () { drag = false; }); });
+    knob.addEventListener('keydown', function (e) {
+      var step = e.key === 'ArrowDown' ? 0.08 : e.key === 'ArrowUp' ? -0.08 : 0;
+      if (step) { touch(); dd = Math.max(0, Math.min(1, dd + step)); render(); e.preventDefault(); }
+    });
+
+    /* al entrar en pantalla la cortina baja sola */
+    render();
+    if (!reduce && 'IntersectionObserver' in window) {
+      dd = 0; render();
+      var io = new IntersectionObserver(function (ents) {
+        if (ents[0].isIntersecting) { io.disconnect(); cmp.classList.add('in'); if (!touched) setTimeout(function () { if (!touched) go(1, 2600); }, 500); }
+      }, { threshold: 0.45 });
+      io.observe(scene);
+    } else { cmp.classList.add('in'); }
   }
 
   /* ---- Galería de producto ---- */

@@ -74,46 +74,41 @@
   <div class="container">
     <header class="sec-head sec-head--center reveal">
       <p class="eyebrow eyebrow--center">Blackout vs Sunscreen</p>
-      <h2>Mueve la cortina y <em>compara.</em></h2>
-      <p class="lead">Es la misma ventana con dos telas distintas. A la izquierda el Blackout bloquea la luz y la vista. A la derecha el Sunscreen filtra la luz, reduce el deslumbramiento y deja ver hacia afuera.</p>
+      <h2>Baja la cortina y <em>compara.</em></h2>
+      <p class="lead">Es la misma ventana con dos telas distintas. Elige una, baja la cortina y mira cuánta luz entra, cuánta vista conservas y cuánta privacidad ganas.</p>
     </header>
 
-    <div class="cmp reveal" id="cmp" style="--pos:50%">
-      <div class="cmp__scene">
-        <img class="cmp__view" src="{{P}}assets/img/cmp-view.webp" srcset="{{P}}assets/img/cmp-view-800.webp 800w, {{P}}assets/img/cmp-view.webp 1240w" sizes="(min-width:1100px) 1020px, 94vw" width="1240" height="698" alt="" loading="lazy" decoding="async">
-        
-        <div class="cmp__fabric cmp__fabric--sun" aria-hidden="true"><i class="hem"></i></div>
-        <div class="cmp__fabric cmp__fabric--black" aria-hidden="true"><i class="hem"></i></div>
+    <div class="cmp reveal" id="cmp" data-fabric="sun" style="--d:1">
+      <div class="cmp__tabs" role="group" aria-label="Elige la tela">
+        <button type="button" class="cmp__tab" data-fabric="black" aria-pressed="false"><b>Blackout</b><small>Sin luz · sin vista</small></button>
+        <button type="button" class="cmp__tab" data-fabric="sun" aria-pressed="true"><b>Sunscreen</b><small>Luz suave · con vista</small></button>
+      </div>
+
+      <div class="cmp__scene" id="cmpScene">
+        <img class="cmp__view" src="{{P}}assets/img/cmp-view.webp" srcset="{{P}}assets/img/cmp-view-800.webp 800w, {{P}}assets/img/cmp-view.webp 1240w" sizes="(min-width:1100px) 1020px, 94vw" width="1240" height="698" alt="Ventanal con vista a Santiago y la cordillera" loading="lazy" decoding="async">
+        <span class="cmp__room" aria-hidden="true"></span>
+        <div class="cmp__blind" aria-hidden="true">
+          <div class="cmp__fabric cmp__fabric--sun"></div>
+          <div class="cmp__fabric cmp__fabric--black"></div>
+          <i class="cmp__hem"></i>
+        </div>
         <span class="cmp__rail" aria-hidden="true"></span>
-
-        <span class="cmp__chip cmp__chip--l"><b>Blackout</b><small>Sin luz · sin vista</small></span>
-        <span class="cmp__chip cmp__chip--r"><b>Sunscreen</b><small>Luz suave · con vista</small></span>
-
-        <span class="cmp__knob" aria-hidden="true"><svg class="ico"><use href="#i-chev-l"/></svg><svg class="ico"><use href="#i-chev-r"/></svg></span>
-        <input class="cmp__range" id="cmpRange" type="range" min="0" max="100" value="50" step="1" aria-label="Comparar Blackout y Sunscreen: mueve para ver cada tela">
-        <span class="cmp__hint" aria-hidden="true">Arrastra</span>
+        <button type="button" class="cmp__knob" id="cmpKnob" aria-label="Arrastra hacia arriba o abajo para subir o bajar la cortina"><svg class="ico"><use href="#i-chev-l"/></svg><svg class="ico"><use href="#i-chev-r"/></svg></button>
       </div>
 
-      <div class="cmp__cols">
-        <article class="cmp__col">
-          <h3>Roller Blackout</h3>
-          <ul class="meters">
-            <li><span>Luz que pasa</span><i style="--w:3%"></i><em>Nada</em></li>
-            <li><span>Vista al exterior</span><i style="--w:0%"></i><em>Ninguna</em></li>
-            <li><span>Privacidad</span><i style="--w:100%"></i><em>Máxima</em></li>
-          </ul>
-          <a class="link link--light" href="productos/roller-blackout/">Ver Roller Blackout <svg class="ico"><use href="#i-arrow"/></svg></a>
-        </article>
-        <article class="cmp__col">
-          <h3>Roller Sunscreen</h3>
-          <ul class="meters">
-            <li><span>Luz que pasa</span><i style="--w:45%"></i><em>Filtrada</em></li>
-            <li><span>Vista al exterior</span><i style="--w:80%"></i><em>Se mantiene</em></li>
-            <li><span>Deslumbramiento</span><i style="--w:18%"></i><em>Reducido</em></li>
-          </ul>
-          <a class="link link--light" href="productos/roller-sunscreen/">Ver Roller Sunscreen <svg class="ico"><use href="#i-arrow"/></svg></a>
-        </article>
+      <div class="cmp__panel">
+        <ul class="meters" aria-live="polite">
+          <li><span>Luz que entra</span><i id="mLuzBar"></i><em><b id="mLuzV">100%</b> <span id="mLuzT">Toda la luz</span></em></li>
+          <li><span>Vista al exterior</span><i id="mVistaBar"></i><em><b id="mVistaV">100%</b> <span id="mVistaT">Completa</span></em></li>
+          <li><span>Privacidad</span><i id="mPrivBar"></i><em><b id="mPrivV">0%</b> <span id="mPrivT">Ninguna</span></em></li>
+        </ul>
+        <div class="cmp__ctl">
+          <label for="cmpRange">Altura de la cortina</label>
+          <input class="cmp__range" id="cmpRange" type="range" min="0" max="100" value="100" step="1">
+          <a class="link link--light" id="cmpLink" href="productos/roller-sunscreen/">Ver Roller Sunscreen <svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
       </div>
+      <p class="cmp__note">Valores referenciales para ilustrar la diferencia entre telas; varían según el tejido elegido.</p>
     </div>
   </div>
 </section>

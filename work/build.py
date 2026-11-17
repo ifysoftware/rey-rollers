@@ -208,8 +208,20 @@ def build():
 {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Rey Roller's","slogan":"Expertos en cortinas","description":"Fabricación e instalación de cortinas roller, persianas y toldos a medida.","telephone":"+56995628622","areaServed":{"@type":"Country","name":"Chile"},"address":{"@type":"PostalAddress","addressLocality":"Santiago","addressCountry":"CL"}}
 </script>'''
 
+    import re
+    _hc = {}
+    def bust(html):
+        """Agrega ?v=<huella> a cada imagen de /assets para que el navegador la recargue cuando cambia el archivo."""
+        def sub(m):
+            rel = m.group(2)
+            fp = os.path.join(SITE, rel)
+            if not os.path.isfile(fp): return m.group(0)
+            if fp not in _hc: _hc[fp] = _h(fp)
+            return f"{m.group(1)}{rel}?v={_hc[fp]}"
+        return re.sub(r'((?:\.\./)*)(assets/[\w\-./]+?\.(?:webp|avif|jpe?g|png|svg))(?![\w?])', sub, html)
+
     def wrap(main, prefix, title, desc, body_class, loader, head_extra, wa_general, wa_visit):
-        return (page.replace("{{MAIN}}", main).replace("{{TITLE}}", escape(title)).replace("{{DESC}}", escape(desc, quote=True))
+        return bust(page.replace("{{MAIN}}", main).replace("{{TITLE}}", escape(title)).replace("{{DESC}}", escape(desc, quote=True))
                 .replace("{{BODY_CLASS}}", body_class).replace("{{LOADER}}", loader).replace("{{HEAD_EXTRA}}", head_extra)
                 .replace("{{SPRITE}}", SPRITE).replace("{{SEAL}}", SEAL).replace("{{VCUT_FOOT}}", vcut("dark-top"))
                 .replace("{{WA_GENERAL}}", wa_general).replace("{{WA_VISITA}}", wa_visit).replace("{{V_CSS}}", VER["css"]).replace("{{V_JS}}", VER["js"]).replace("{{P}}", prefix))
