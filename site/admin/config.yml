@@ -22,6 +22,8 @@ public_folder: /uploads
 collections:
   - name: productos
     label: Productos
+    editor:
+      preview: false
     files:
       - name: productos
         label: Productos y fotos
@@ -31,6 +33,8 @@ collections:
             name: products
             widget: list
             allow_add: false
+            allow_remove: false
+            allow_reorder: false
             collapsed: true
             summary: '{{fields.name}}'
             fields:

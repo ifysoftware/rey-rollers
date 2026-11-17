@@ -1,0 +1,62 @@
+# Panel de edición de Rey Roller's (Decap CMS)
+# El cliente solo puede cambiar fotos, nombres y textos de los productos. No puede agregar ni borrar productos.
+
+backend:
+  name: github
+  repo: ifysoftware/rey-rollers
+  branch: main
+  commit_messages:
+    update: 'Actualiza {{collection}} desde el panel'
+    uploadMedia: 'Sube foto {{path}}'
+    deleteMedia: 'Borra foto {{path}}'
+
+locale: es
+site_url: /
+display_url: /
+publish_mode: simple
+
+# Las fotos originales quedan en site/uploads; el sitio las optimiza solo al publicar
+media_folder: site/uploads
+public_folder: /uploads
+
+collections:
+  - name: productos
+    label: Productos
+    editor:
+      preview: false
+    files:
+      - name: productos
+        label: Productos y fotos
+        file: work/data/products.json
+        fields:
+          - label: Productos
+            name: products
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            collapsed: true
+            summary: '{{fields.name}}'
+            fields:
+              - { label: Identificador, name: slug, widget: hidden }
+              - { label: Grupo, name: group, widget: hidden }
+              - { label: Nombre, name: name, widget: string }
+              - { label: Etiqueta (ej. A medida, Nuevo), name: tag, widget: string, required: false }
+              - { label: Texto corto de la tarjeta, name: short, widget: string, hint: 'Una línea. Se ve en las tarjetas.' }
+              - { label: Descripción, name: description, widget: text }
+              - label: Características
+                name: bullets
+                widget: list
+                required: false
+                field: { label: Característica, name: item, widget: string }
+              - label: Ideal para
+                name: ideal
+                widget: list
+                required: false
+                field: { label: Espacio, name: item, widget: string }
+              - label: Fotos
+                name: photos
+                widget: list
+                required: false
+                hint: 'La primera foto es la que aparece en la tarjeta. Se pueden reordenar arrastrando.'
+                field: { label: Foto, name: foto, widget: image, choose_url: false }
