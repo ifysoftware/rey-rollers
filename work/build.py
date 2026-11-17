@@ -280,6 +280,17 @@ def build():
         open(os.path.join(out, "index.html"), "w", encoding="utf8").write(
             wrap(m, P, f"{p['name']} | Rey Rollers", f"{p['name']}: {p['short']} Fabricación e instalación en Santiago, envíos a todo Chile y 3 años de garantía.",
                  "page-product", "", "", wg.replace("{{P}}", P), wv, f"{SITE_URL}/productos/{p['slug']}/"))
+    # -------- página 404 (no indexable; se sirve con estado 404 en Netlify)
+    nf = ('<section class="section" style="padding:190px 0 120px;text-align:center"><div class="container">'
+          '<p class="eyebrow eyebrow--center">Error 404</p>'
+          '<h1 class="h2" style="margin:10px 0 14px;color:#fff">Esta página no existe</h1>'
+          '<p class="lead" style="margin:0 auto 30px;max-width:520px;color:rgba(255,255,255,.75)">Puede que el enlace haya cambiado. Mira nuestros productos o escríbenos y te ayudamos.</p>'
+          '<p style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">'
+          '<a class="btn btn--primary" href="/">Ir al inicio</a>'
+          '<a class="btn btn--wa" href="{{WA_GENERAL}}">Escríbenos por WhatsApp</a></p></div></section>')
+    open(os.path.join(SITE, "404.html"), "w", encoding="utf8").write(
+        wrap(nf, "/", "Página no encontrada | Rey Rollers", "La página que buscas no existe. Visita Rey Rollers: cortinas roller a medida, persianas y toldos.",
+             "page-product", "", '<meta name="robots" content="noindex">', wg.replace("{{P}}", "/"), wv))
     urls = [SITE_URL + "/"] + [f"{SITE_URL}/productos/{p['slug']}/" for p in data]
     open(os.path.join(SITE, "sitemap.xml"), "w", encoding="utf8").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
