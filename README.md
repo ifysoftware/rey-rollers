@@ -4,7 +4,7 @@ Sitio estático para Netlify. El cliente edita fotos y textos de productos desde
 
 ## Estructura
 - `site/` — lo que se publica (HTML generado, CSS, JS, imágenes, `admin/`).
-- `work/build.py` + `work/templates/` + `work/data/products.json` — generador. **Los textos y fotos de productos viven en `products.json`** (es lo que edita el panel).
+- `work/build.py` + `work/templates/` + `work/data/products/` — generador. **Los textos y fotos de cada producto viven en `work/data/products/<slug>.json`** (un archivo por producto; es lo que edita el panel).
 - `site/uploads/` — fotos originales subidas desde el panel. El build las optimiza a `site/assets/img/products/`.
 - `netlify.toml` — comando de build (`python3 work/build.py`), cabeceras y caché.
 
@@ -21,7 +21,7 @@ Entrar a `https://TU-SITIO/admin` → "Iniciar sesión con GitHub" → *Producto
 La primera foto de la lista es la que aparece en la tarjeta del producto.
 
 ## Notas
-- El cliente no puede agregar ni borrar productos (solo editar los existentes). Para agregar uno, se añade a `products.json`.
+- El cliente no puede agregar ni borrar productos (solo editar los existentes). Para agregar uno, se crea un nuevo archivo en `work/data/products/` (copiando uno existente y cambiando `slug` y `order`).
 - Quien no sea colaborador del repo puede ver la pantalla de login pero GitHub no le deja guardar nada.
 - `site/admin/decap-cms*.js` es Decap CMS 3.17.3 alojado en el propio sitio (sin CDN).
 - Build local: `pip install Pillow && python3 work/build.py`.

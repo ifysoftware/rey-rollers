@@ -1,5 +1,5 @@
 # Panel de edición de Rey Roller's (Decap CMS)
-# El cliente solo puede cambiar fotos, nombres y textos de los productos. No puede agregar ni borrar productos.
+# El cliente solo puede cambiar fotos y textos de los productos. No puede agregar ni borrar productos.
 
 backend:
   name: github
@@ -20,43 +20,89 @@ media_folder: site/uploads
 public_folder: /uploads
 
 collections:
-  - name: productos
-    label: Productos
+  - name: principales
+    label: Productos principales
+    label_singular: producto
+    description: 'Haz clic en un producto para editar sus fotos y textos. Al terminar, presiona Guardar: el sitio se actualiza solo en 1 o 2 minutos.'
+    folder: work/data/products
+    extension: json
+    format: json
+    create: false
+    delete: false
+    filter: { field: group, value: main }
+    summary: '{{name}} — {{short}}'
+    sortable_fields: ['order']
     editor:
       preview: false
-    files:
-      - name: productos
-        label: Productos y fotos
-        file: work/data/products.json
-        fields:
-          - label: Productos
-            name: products
-            widget: list
-            allow_add: false
-            allow_remove: false
-            allow_reorder: false
-            collapsed: true
-            summary: '{{fields.name}}'
-            fields:
-              - { label: Identificador, name: slug, widget: hidden }
-              - { label: Grupo, name: group, widget: hidden }
-              - { label: Nombre, name: name, widget: string }
-              - { label: Etiqueta (ej. A medida, Nuevo), name: tag, widget: string, required: false }
-              - { label: Texto corto de la tarjeta, name: short, widget: string, hint: 'Una línea. Se ve en las tarjetas.' }
-              - { label: Descripción, name: description, widget: text }
-              - label: Características
-                name: bullets
-                widget: list
-                required: false
-                field: { label: Característica, name: item, widget: string }
-              - label: Ideal para
-                name: ideal
-                widget: list
-                required: false
-                field: { label: Espacio, name: item, widget: string }
-              - label: Fotos
-                name: photos
-                widget: list
-                required: false
-                hint: 'La primera foto es la que aparece en la tarjeta. Se pueden reordenar arrastrando.'
-                field: { label: Foto, name: foto, widget: image, choose_url: false }
+    fields:
+      - { label: Identificador, name: slug, widget: hidden }
+      - { label: Grupo, name: group, widget: hidden }
+      - { label: Orden, name: order, widget: hidden }
+      - { label: Nombre del producto, name: name, widget: string }
+      - { label: Foto principal, name: photo_1, widget: image, required: false, choose_url: false, hint: 'Es la que se ve en la tarjeta y al abrir el producto. Mejor horizontal y de buena calidad.' }
+      - { label: Foto 2, name: photo_2, widget: image, required: false, choose_url: false }
+      - { label: Foto 3, name: photo_3, widget: image, required: false, choose_url: false }
+      - { label: Foto 4, name: photo_4, widget: image, required: false, choose_url: false }
+      - { label: Etiqueta, name: tag, widget: string, required: false, hint: 'Una palabra corta que aparece sobre la tarjeta. Ej: A medida, Nuevo. Déjalo vacío si no quieres etiqueta.' }
+      - { label: Texto corto, name: short, widget: string, hint: 'Una sola línea. Se ve debajo del nombre en las tarjetas.' }
+      - { label: Descripción, name: description, widget: text, hint: 'Texto que aparece en la página del producto.' }
+      - { label: Características, name: bullets, widget: text, required: false, hint: 'Una por línea. Cada línea aparece como un punto con check en la página del producto.' }
+      - { label: Ideal para, name: ideal, widget: text, required: false, hint: 'Un espacio por línea. Ej: Oficinas (Enter) Dormitorios.' }
+
+  - name: mas
+    label: Más productos
+    label_singular: producto
+    description: 'Haz clic en un producto para editar sus fotos y textos. Al terminar, presiona Guardar: el sitio se actualiza solo en 1 o 2 minutos.'
+    folder: work/data/products
+    extension: json
+    format: json
+    create: false
+    delete: false
+    filter: { field: group, value: more }
+    summary: '{{name}} — {{short}}'
+    sortable_fields: ['order']
+    editor:
+      preview: false
+    fields:
+      - { label: Identificador, name: slug, widget: hidden }
+      - { label: Grupo, name: group, widget: hidden }
+      - { label: Orden, name: order, widget: hidden }
+      - { label: Nombre del producto, name: name, widget: string }
+      - { label: Foto principal, name: photo_1, widget: image, required: false, choose_url: false, hint: 'Es la que se ve en la tarjeta y al abrir el producto. Mejor horizontal y de buena calidad.' }
+      - { label: Foto 2, name: photo_2, widget: image, required: false, choose_url: false }
+      - { label: Foto 3, name: photo_3, widget: image, required: false, choose_url: false }
+      - { label: Foto 4, name: photo_4, widget: image, required: false, choose_url: false }
+      - { label: Etiqueta, name: tag, widget: string, required: false, hint: 'Una palabra corta que aparece sobre la tarjeta. Ej: A medida, Nuevo. Déjalo vacío si no quieres etiqueta.' }
+      - { label: Texto corto, name: short, widget: string, hint: 'Una sola línea. Se ve debajo del nombre en las tarjetas.' }
+      - { label: Descripción, name: description, widget: text, hint: 'Texto que aparece en la página del producto.' }
+      - { label: Características, name: bullets, widget: text, required: false, hint: 'Una por línea. Cada línea aparece como un punto con check en la página del producto.' }
+      - { label: Ideal para, name: ideal, widget: text, required: false, hint: 'Un espacio por línea. Ej: Oficinas (Enter) Dormitorios.' }
+
+  - name: eco
+    label: Línea Eco
+    label_singular: producto
+    description: 'Haz clic en un producto para editar sus fotos y textos. Al terminar, presiona Guardar: el sitio se actualiza solo en 1 o 2 minutos.'
+    folder: work/data/products
+    extension: json
+    format: json
+    create: false
+    delete: false
+    filter: { field: group, value: eco }
+    summary: '{{name}} — {{short}}'
+    sortable_fields: ['order']
+    editor:
+      preview: false
+    fields:
+      - { label: Identificador, name: slug, widget: hidden }
+      - { label: Grupo, name: group, widget: hidden }
+      - { label: Orden, name: order, widget: hidden }
+      - { label: Nombre del producto, name: name, widget: string }
+      - { label: Foto principal, name: photo_1, widget: image, required: false, choose_url: false, hint: 'Es la que se ve en la tarjeta y al abrir el producto. Mejor horizontal y de buena calidad.' }
+      - { label: Foto 2, name: photo_2, widget: image, required: false, choose_url: false }
+      - { label: Foto 3, name: photo_3, widget: image, required: false, choose_url: false }
+      - { label: Foto 4, name: photo_4, widget: image, required: false, choose_url: false }
+      - { label: Etiqueta, name: tag, widget: string, required: false, hint: 'Una palabra corta que aparece sobre la tarjeta. Ej: A medida, Nuevo. Déjalo vacío si no quieres etiqueta.' }
+      - { label: Texto corto, name: short, widget: string, hint: 'Una sola línea. Se ve debajo del nombre en las tarjetas.' }
+      - { label: Descripción, name: description, widget: text, hint: 'Texto que aparece en la página del producto.' }
+      - { label: Características, name: bullets, widget: text, required: false, hint: 'Una por línea. Cada línea aparece como un punto con check en la página del producto.' }
+      - { label: Ideal para, name: ideal, widget: text, required: false, hint: 'Un espacio por línea. Ej: Oficinas (Enter) Dormitorios.' }

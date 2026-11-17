@@ -1,0 +1,15 @@
+{
+  "slug": "roller-sunscreen",
+  "group": "main",
+  "order": 2,
+  "name": "Roller Sunscreen",
+  "tag": "A medida",
+  "short": "Luz natural controlada, con vista al exterior.",
+  "description": "Permite el paso controlado de luz natural manteniendo visibilidad hacia el exterior y protección contra rayos UV. Su tejido técnico reduce el deslumbramiento y mejora el confort térmico en oficinas y espacios residenciales.",
+  "bullets": "Paso controlado de luz natural\nMantiene la visibilidad hacia el exterior\nProtección contra rayos UV\nReduce el deslumbramiento\nMejora el confort térmico",
+  "ideal": "Oficinas\nEspacios residenciales\nVentanales con mucho sol",
+  "photo_1": "/uploads/roller-sunscreen-1.jpg",
+  "photo_2": "/uploads/roller-sunscreen-2.jpg",
+  "photo_3": "",
+  "photo_4": ""
+}

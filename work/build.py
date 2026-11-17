@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Genera el sitio estático de Rey Roller's en ../site.
 
-  - Datos de productos: work/data/products.json
+  - Datos de productos: work/data/products/<slug>.json (uno por producto)
   - Fotos por producto: photos/<slug>/*.jpg|png|webp  (se optimizan solas al construir)
   - Salida: site/index.html y site/productos/<slug>/index.html
 """
@@ -91,6 +91,21 @@ LOADER = '''<!-- LOADING: solo el isotipo, 2 s. Funciona con CSS; el JS solo lib
 </div>'''
 
 
+def _lines(v):
+    """El panel guarda los puntos como texto, uno por línea; también acepta listas."""
+    if isinstance(v, list): return [str(x).strip() for x in v if str(x).strip()]
+    return [l.strip() for l in str(v or "").splitlines() if l.strip()]
+
+def load_products():
+    """Un archivo JSON por producto en work/data/products/ (los edita el cliente desde /admin)."""
+    items = [json.load(open(f, encoding="utf8")) for f in sorted(glob.glob(os.path.join(WORK, "data", "products", "*.json")))]
+    items.sort(key=lambda p: (p.get("order") or 999, p["slug"]))
+    for p in items:
+        p["tag"] = p.get("tag") or ""
+        p["bullets"], p["ideal"] = _lines(p.get("bullets")), _lines(p.get("ideal"))
+        p["photos"] = [p[k] for k in ("photo_1", "photo_2", "photo_3", "photo_4") if p.get(k)]
+    return items
+
 def vcut(kind):
     """Cortes en V. dark-top / cream-top: valle o cima al inicio de una sección. dark-bottom: el banner entra en el hero."""
     paths = {
@@ -159,7 +174,7 @@ VER={}
 
 def build():
     VER['css']=_h(os.path.join(SITE,'css','styles.css')); VER['js']=_h(os.path.join(SITE,'js','main.js'))
-    data = json.load(open(os.path.join(WORK, "data", "products.json"), encoding="utf8"))["products"]
+    data = load_products()
     photos = {p["slug"]: process_photos(p["slug"], p.get("photos") or []) for p in data}
     page = rd(os.path.join(WORK, "templates", "page.html"))
     home = rd(os.path.join(WORK, "templates", "home_main.html"))
@@ -205,7 +220,7 @@ def build():
 
     head_home = '''<link rel="preload" as="image" type="image/avif" imagesrcset="assets/img/hero/hero-640.avif 640w, assets/img/hero/hero-960.avif 960w, assets/img/hero/hero-1280.avif 1280w, assets/img/hero/hero-1600.avif 1600w, assets/img/hero/hero-2048.avif 2048w" imagesizes="100vw" fetchpriority="high">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Rey Roller's","slogan":"Expertos en cortinas","description":"Fabricación e instalación de cortinas roller, persianas y toldos a medida.","telephone":"+56995628622","areaServed":{"@type":"Country","name":"Chile"},"address":{"@type":"PostalAddress","addressLocality":"Santiago","addressCountry":"CL"}}
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Rey Roller's","slogan":"Expertos en cortinas","description":"Cortinas roller, persianas y toldos a medida en Santiago, con asesoría técnica, instalación profesional y hasta 3 años de garantía.","telephone":"+56995628622","areaServed":{"@type":"Country","name":"Chile"},"address":{"@type":"PostalAddress","addressLocality":"Santiago","addressCountry":"CL"}}
 </script>'''
 
     import re
@@ -228,8 +243,8 @@ def build():
 
     wg, wv = wa("Hola Rey Roller's, quiero cotizar un proyecto."), wa("Hola Rey Roller's, quiero agendar una visita técnica.")
     open(os.path.join(SITE, "index.html"), "w", encoding="utf8").write(
-        wrap(home_html.replace("{{P}}", ""), "", "Rey Roller's — Expertos en Cortinas | Santiago, Chile",
-             "Cortinas roller, persianas y toldos a medida en Santiago. Asesoría técnica, instalación profesional, motorización y 3 años de garantía. Envíos a todo Chile.",
+        wrap(home_html.replace("{{P}}", ""), "", "Cortinas Roller a Medida | Rey Rollers",
+             "Cortinas roller a medida en Santiago: Blackout, Sunscreen y Dúo, más persianas y toldos. Instalación profesional y hasta 3 años de garantía. Cotiza hoy.",
              "page-home", LOADER, head_home, wg, wv))
 
     # -------- páginas de producto

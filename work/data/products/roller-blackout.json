@@ -1,0 +1,15 @@
+{
+  "slug": "roller-blackout",
+  "group": "main",
+  "order": 1,
+  "name": "Roller Blackout",
+  "tag": "A medida",
+  "short": "Bloquea la luz exterior y da máxima privacidad.",
+  "description": "Sistema diseñado para bloquear la entrada de luz exterior, ideal para dormitorios, salas audiovisuales y espacios que requieren máxima privacidad y control lumínico. Aporta aislamiento térmico y una estética limpia y contemporánea.",
+  "bullets": "Bloquea la entrada de luz exterior\nMáxima privacidad y control lumínico\nAporta aislamiento térmico\nEstética limpia y contemporánea",
+  "ideal": "Dormitorios\nSalas audiovisuales\nEspacios que requieren privacidad",
+  "photo_1": "",
+  "photo_2": "",
+  "photo_3": "",
+  "photo_4": ""
+}
