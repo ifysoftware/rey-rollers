@@ -1,15 +1,15 @@
 {
-  "slug": "roller-duo-blackout-premium",
-  "group": "main",
-  "order": 6,
+  "photo_1": "/uploads/1000225863.webp",
+  "photo_2": "",
+  "photo_3": "",
+  "photo_4": "",
   "name": "Roller Dúo Blackout Premium",
+  "slug": "roller-duo-blackout-premium",
+  "order": 6,
+  "bullets": "Mayor opacidad\nTerminación superior\nDiseño sofisticado y mayor control de privacidad",
+  "ideal": "Dormitorios\nAmbientes que buscan elegancia y desempeño técnico",
   "tag": "A medida",
   "short": "Mayor opacidad y terminación superior.",
   "description": "Versión de mayor opacidad y terminación superior, que ofrece un equilibrio entre diseño sofisticado y mayor control de privacidad, ideal para ambientes que buscan elegancia y desempeño técnico.",
-  "bullets": "Mayor opacidad\nTerminación superior\nDiseño sofisticado y mayor control de privacidad",
-  "ideal": "Dormitorios\nAmbientes que buscan elegancia y desempeño técnico",
-  "photo_1": "",
-  "photo_2": "",
-  "photo_3": "",
-  "photo_4": ""
+  "group": "main"
 }
