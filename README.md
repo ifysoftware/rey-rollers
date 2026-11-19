@@ -9,7 +9,7 @@ Sitio estático para Netlify. El cliente edita fotos y textos de productos desde
 - `netlify.toml` — comando de build (`python3 work/build.py`), cabeceras y caché.
 
 ## Puesta en marcha (una sola vez)
-1. Crear un repo **privado** en GitHub y subir esta carpeta completa.
+1. Crear un repo en GitHub y subir esta carpeta completa. **Ojo con Netlify (plan gratis):** en un repo privado solo permite UN colaborador; si el cliente publica desde el panel, Netlify bloquea el deploy ("Unrecognized Git contributor"). Soluciones: repo público, publicar con GitHub Actions o plan Pro.
 2. En Netlify: *Add new site → Import from Git*, elegir el repo. El build y la carpeta de publicación ya vienen en `netlify.toml`.
 3. En GitHub: *Settings → Developer settings → OAuth Apps → New*. Homepage = URL del sitio; callback = `https://api.netlify.com/auth/done`. Copiar Client ID y generar Client Secret.
 4. En Netlify: *Site configuration → Access & security → OAuth → Install provider → GitHub*, pegar Client ID y Secret.

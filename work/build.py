@@ -8,7 +8,12 @@
 import base64, io, json, os, shutil, glob
 from html import escape
 from urllib.parse import quote
-from PIL import Image
+from PIL import Image, ImageOps
+try:  # fotos de iPhone (.heic): se leen si el módulo está disponible
+    import pillow_heif
+    pillow_heif.register_heif_opener()
+except Exception:
+    pass
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SITE = os.path.join(ROOT, "site")
@@ -36,8 +41,14 @@ def process_photos(slug, listed=()):
     res = []
     if not src: return res
     os.makedirs(out_dir)
-    for i, f in enumerate(src, 1):
-        im = Image.open(f).convert("RGB")
+    for f in src:
+        # Una foto dañada o en un formato raro NUNCA debe romper la publicación del sitio: se omite y se avisa.
+        try:
+            im = ImageOps.exif_transpose(Image.open(f)).convert("RGB")  # respeta la orientación del celular
+        except Exception as e:
+            print(f"AVISO: no se pudo leer la foto {os.path.basename(f)} ({slug}): {e}")
+            continue
+        i = len(res) + 1
         big = im.copy(); big.thumbnail((1400, 1400), Image.LANCZOS)
         small = im.copy(); small.thumbnail((520, 520), Image.LANCZOS)
         big.save(os.path.join(out_dir, f"{i}.webp"), quality=78, method=6)
