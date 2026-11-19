@@ -1,15 +1,15 @@
 {
-  "slug": "cierre-terraza-zipper",
-  "group": "more",
-  "order": 13,
+  "photo_1": "/uploads/1000226952.webp",
+  "photo_2": "",
+  "photo_3": "",
+  "photo_4": "",
   "name": "Cierre Terraza Zipper",
+  "slug": "cierre-terraza-zipper",
+  "order": 13,
+  "bullets": "Sistema zipper\nProtege del sol y el viento\nMantiene la vista",
+  "ideal": "Terrazas",
   "tag": "Nuevo",
   "short": "Cierre de terraza con sistema zipper.",
   "description": "Cierre con sistema zipper que protege la terraza del sol y el viento sin perder la vista.",
-  "bullets": "Sistema zipper\nProtege del sol y el viento\nMantiene la vista",
-  "ideal": "Terrazas",
-  "photo_1": "",
-  "photo_2": "",
-  "photo_3": "",
-  "photo_4": ""
+  "group": "more"
 }
