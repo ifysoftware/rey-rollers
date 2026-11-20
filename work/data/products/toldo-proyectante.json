@@ -1,15 +1,15 @@
 {
-  "slug": "toldo-proyectante",
-  "group": "main",
-  "order": 7,
+  "photo_1": "/uploads/1000226971.webp",
+  "photo_2": "/uploads/1000226970.webp",
+  "photo_3": "",
+  "photo_4": "",
   "name": "Toldo Proyectante",
+  "slug": "toldo-proyectante",
+  "order": 7,
+  "bullets": "Protección solar exterior\nVersión manual o motorizada\nAmplía y resguarda terrazas y ventanales\nMejora el confort térmico",
+  "ideal": "Terrazas\nVentanales expuestos al sol",
   "tag": "A medida",
   "short": "Protección solar exterior para terrazas y ventanales.",
   "description": "Sistema de protección solar exterior diseñado para ampliar y resguardar terrazas y ventanales. Disponible en versiones manuales o motorizadas, mejora el confort térmico y protege frente a la exposición directa al sol.",
-  "bullets": "Protección solar exterior\nVersión manual o motorizada\nAmplía y resguarda terrazas y ventanales\nMejora el confort térmico",
-  "ideal": "Terrazas\nVentanales expuestos al sol",
-  "photo_1": "",
-  "photo_2": "",
-  "photo_3": "",
-  "photo_4": ""
+  "group": "main"
 }
