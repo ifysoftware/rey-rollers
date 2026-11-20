@@ -1,15 +1,15 @@
 {
-  "slug": "persiana-madera",
-  "group": "main",
-  "order": 8,
+  "photo_1": "/uploads/1000226986.webp",
+  "photo_2": "/uploads/1000226974.webp",
+  "photo_3": "",
+  "photo_4": "",
   "name": "Persiana de Madera",
+  "slug": "persiana-madera",
+  "order": 8,
+  "bullets": "Lamas de madera\nControl preciso de la luz\nTerminación noble",
+  "ideal": "Livings y dormitorios\nAmbientes con carácter",
   "tag": "A medida",
   "short": "Calidez natural y control preciso de la luz.",
   "description": "Calidez natural y control preciso de la luz mediante lamas de madera. Una terminación noble para ambientes que buscan carácter y elegancia.",
-  "bullets": "Lamas de madera\nControl preciso de la luz\nTerminación noble",
-  "ideal": "Livings y dormitorios\nAmbientes con carácter",
-  "photo_1": "",
-  "photo_2": "",
-  "photo_3": "",
-  "photo_4": ""
+  "group": "main"
 }
