@@ -1,15 +1,15 @@
 {
-  "slug": "toldo-vertical",
-  "group": "more",
-  "order": 10,
-  "name": "Toldo Vertical",
-  "tag": "",
-  "short": "Protección solar exterior en formato vertical.",
-  "description": "Protección solar exterior en formato vertical para terrazas y ventanales, con control de luz y privacidad.",
-  "bullets": "Formato vertical exterior\nControl de luz y privacidad",
-  "ideal": "Terrazas\nVentanales",
   "photo_1": "",
   "photo_2": "",
   "photo_3": "",
-  "photo_4": ""
+  "photo_4": "",
+  "name": "Toldo Vertical",
+  "slug": "toldo-vertical",
+  "order": 10,
+  "bullets": "Formato vertical exterior\nControl de luz y privacidad",
+  "ideal": "Terrazas\nVentanales",
+  "tag": "",
+  "short": "Protección solar exterior en formato vertical.",
+  "description": "La mejor solución del mercado para cerrar\nterrazas, balcones y quinchos logrando una\nexcelente aislación, tanto del frío como del sol.\nRobustos, altamente durables y resistentes a\nclimas extremos, pueden ser de accionamiento\nmanual y/o motorizado.\n",
+  "group": "more"
 }
